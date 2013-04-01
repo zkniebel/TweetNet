@@ -1,0 +1,35 @@
+# TweetNET v1.0
+by Zachary Kniebel
+
+## Overview
+   TweetNET is a C# library for accessing the new Twitter API, v1.1. It is
+   light-weight, highly extensible, and includes classes designed for 
+   explicit use with the different requests supported by twitter (e.g. 
+   GET statuses/user_timeline, GET statuses/show/:id, etc.). The library
+   also satisfies the oAuth requirements for authorizing requests to 
+   Twitter. The library matches up with Twitter's API, exactly, and all
+   request specific classes include, as properties, all of the query 
+   parameters accepted by Twitter, for that request. The library's 
+   intellisense for these properties is also copied directly from 
+   Twitter's description and example values for that parameter, in their 
+   API.
+   
+## Notes
+   The initial release has included classes for two of Twitter's requests, 
+   GET statuses/user_timeline and GET statuses/show/:id, (more are on the 
+   way) along with the base Request class, which can be used to make any 
+   request to Twitter. If you wish to use the Request class directly, you
+   will have to look up the request parameters that you need/want in the 
+   request at http://dev.twitter.com/. You may also inherit the Request
+   class to build onto the library, using the inheriting classes for 
+   the implemented request types as a guide. 
+   
+## Making a request
+   Please view the Example_Request.txt document, for an example of how 
+   you can make a simple request to retrieve a user's timeline. Note that
+   the Library matches up with Twitter's API, and request-specific classes
+   include, as properties, all of the query parameters accepted by 
+   Twitter.
+   
+   
+## More documentation for this library will be added as soon as possible.

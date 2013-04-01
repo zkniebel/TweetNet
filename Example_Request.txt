@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using TweetNET.OAuth;
+using TweetNET.Requests.GET;
+using System.Net;
+using System.IO;
+
+public partial class _Default : System.Web.UI.Page {
+    protected void Page_Load(object sender, EventArgs e) {
+        var consumerKey = "your consumerKey";
+        var consumerSecret = "your consumerSecret";
+        var oAuthToken = "your oAuthToken";
+        var oAuthTokenSecret = "your oAuthTokenSecret";
+
+        var twitterHandle = "your twitter handle";
+
+        var tokens = new SecurityTokens(consumerKey, consumerSecret, oAuthToken, oAuthTokenSecret);
+
+        var utGETRequest = new UserTimelineGETRequest(tokens);
+        utGETRequest.Screen_Name = twitterHandle;
+
+        var request = utGETRequest.BuildRequest();
+        WebResponse response = utGETRequest.SendRequest(request);
+        string responseData = new StreamReader(response.GetResponseStream()).ReadToEnd();
+    }
+}
