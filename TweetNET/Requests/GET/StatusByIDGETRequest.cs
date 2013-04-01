@@ -18,6 +18,7 @@ namespace TweetNET.Requests.GET {
         private string _Include_Entities = string.Empty;
 
         /// <summary>
+        /// (required)
         /// The numerical ID of the desired Tweet.
         /// </summary>
         /// <example>Example Values: 123</example>
