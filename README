@@ -14,7 +14,8 @@ by Zachary Kniebel
    Twitter's description and example values for that parameter, in their 
    API.
    
-## Notes
+   
+## Using the Library
    The initial release has included classes for two of Twitter's requests, 
    GET statuses/user_timeline and GET statuses/show/:id, (more are on the 
    way) along with the base Request class, which can be used to make any 
@@ -23,6 +24,7 @@ by Zachary Kniebel
    request at http://dev.twitter.com/. You may also inherit the Request
    class to build onto the library, using the inheriting classes for 
    the implemented request types as a guide. 
+
    
 ## Making a request
    Please view the Example_Request.txt document, for an example of how 
@@ -31,5 +33,14 @@ by Zachary Kniebel
    include, as properties, all of the query parameters accepted by 
    Twitter.
    
+   
+## Rendering Tweets
+   TweetNET was originally designed to provide a C# back-end for Twitter
+   Feed, a jQuery plugin that is designed to simplify the rendering of 
+   tweets. It was developed with simplicity, robustness, and performance
+   in mind, and may be used to render tweets regardless of the type of 
+   request that was used to retrieve them. For more information, view the
+   repository at https://github.com/zkniebel/jquery-twitter-feed.
+
    
 ## More documentation for this library will be added as soon as possible.
