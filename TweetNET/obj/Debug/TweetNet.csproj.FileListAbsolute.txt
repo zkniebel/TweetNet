@@ -1,0 +1,10 @@
+C:\inetpub\wwwroot\Library Projects\twitter\TweetSharp\TweetSharp\bin\Debug\TweetNet.dll
+C:\inetpub\wwwroot\Library Projects\twitter\TweetSharp\TweetSharp\bin\Debug\TweetNet.pdb
+C:\inetpub\wwwroot\Library Projects\twitter\TweetSharp\TweetSharp\obj\Debug\ResolveAssemblyReference.cache
+C:\inetpub\wwwroot\Library Projects\twitter\TweetSharp\TweetSharp\obj\Debug\TweetNet.dll
+C:\inetpub\wwwroot\Library Projects\twitter\TweetSharp\TweetSharp\obj\Debug\TweetNet.pdb
+C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNet\bin\Debug\TweetNet.dll
+C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNet\bin\Debug\TweetNet.pdb
+C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNet\obj\Debug\ResolveAssemblyReference.cache
+C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNet\obj\Debug\TweetNet.dll
+C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNet\obj\Debug\TweetNet.pdb

@@ -1,0 +1,5 @@
+C:\inetpub\wwwroot\Library Projects\twitter\TweetSharp\TweetSharp\bin\Debug\TweetSharp.dll
+C:\inetpub\wwwroot\Library Projects\twitter\TweetSharp\TweetSharp\bin\Debug\TweetSharp.pdb
+C:\inetpub\wwwroot\Library Projects\twitter\TweetSharp\TweetSharp\obj\Debug\ResolveAssemblyReference.cache
+C:\inetpub\wwwroot\Library Projects\twitter\TweetSharp\TweetSharp\obj\Debug\TweetSharp.dll
+C:\inetpub\wwwroot\Library Projects\twitter\TweetSharp\TweetSharp\obj\Debug\TweetSharp.pdb
