@@ -8,3 +8,4 @@ C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNet\bin\Debug\TweetNet
 C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNet\obj\Debug\ResolveAssemblyReference.cache
 C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNet\obj\Debug\TweetNet.dll
 C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNet\obj\Debug\TweetNet.pdb
+C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNet\bin\Debug\TweetNET.dll.config

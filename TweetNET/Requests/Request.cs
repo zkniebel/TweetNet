@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Net;
 using TweetNET.OAuth;
-using TweetNET.Requests;
-using TweetNET.Requests.Parameters;
+using TweetNET.Parameters;
 
-namespace TweetNET {
+namespace TweetNET.Requests {
     /// <summary>
     /// Abstract class to manage the building and sending of Twitter API requests
     /// </summary>
@@ -44,8 +43,14 @@ namespace TweetNET {
         /// <param name="resourceURL">URL to which the request should be sent</param>
         /// <param name="requestParams">List of request-specific parameters</param>
         /// <param name="oAuthTokens">oAuth keys, tokens and secrets used to authorize the request</param>
-        public Request(string requestMethod, string resourceURL, RequestParameterCollection requestParams, SecurityTokens oAuthTokens) {
-            RequestMethod = requestMethod;
+        public Request(RequestMethods requestMethod, string resourceURL, RequestParameterCollection requestParams, SecurityTokens oAuthTokens) {
+            if (requestMethod == 0) {
+                RequestMethod = Globals.Common.REQUEST_METHOD_GET;
+                Expect100Continue = false;
+            } else {
+                RequestMethod = Globals.Common.REQUEST_METHOD_POST;
+            }
+            
             ResourceURL = resourceURL;
             RequestParams = requestParams;
             OAuth = new OAuthInstance(oAuthTokens);
@@ -59,9 +64,9 @@ namespace TweetNET {
             var baseString = OAuth.GetOAuthBaseString(RequestParams);
             baseString = string.Concat(
                 RequestMethod,
-                TweetNET.Requests.Globals.Common.COMMON_STRING_AMPERSAND,
+                TweetNET.Globals.Common.COMMON_STRING_AMPERSAND,
                 Uri.EscapeDataString(ResourceURL), 
-                TweetNET.Requests.Globals.Common.COMMON_STRING_AMPERSAND, 
+                TweetNET.Globals.Common.COMMON_STRING_AMPERSAND, 
                 Uri.EscapeDataString(baseString));
             
             return baseString;
@@ -86,10 +91,10 @@ namespace TweetNET {
             var header = OAuth.GetOAuthHeader(signature);
 
             var parsedParams = string.Join(
-                TweetNET.Requests.Globals.Common.COMMON_STRING_AMPERSAND,
+                TweetNET.Globals.Common.COMMON_STRING_AMPERSAND,
                 RequestParams);
             var requestURL = string.Format(
-                TweetNET.Requests.Globals.Common.STRING_FORMAT_QUESTION_MARK_DELIM, 
+                TweetNET.Globals.Common.STRING_FORMAT_QUESTION_MARK_DELIM, 
                 ResourceURL, 
                 parsedParams);
 
@@ -109,6 +114,11 @@ namespace TweetNET {
         public virtual WebResponse SendRequest(HttpWebRequest request) {
             ServicePointManager.Expect100Continue = Expect100Continue;
             return request.GetResponse();
+        }
+
+        public enum RequestMethods {
+            GET,
+            POST
         }
     }
 }

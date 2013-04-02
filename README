@@ -37,7 +37,13 @@ by Zachary Kniebel
    include, as properties, all of the query parameters accepted by 
    Twitter.
    
-   
+
+## Documentation 
+   To view the documentation for this library (work in progress), go to 
+   TweetNET -> docs -> Help, and open the file "index.html" in either IE 
+   or FireFox.   
+
+ 
 ## Rendering Tweets
    TweetNET was originally designed to provide a C# back-end for Twitter
    Feed, a jQuery plugin that is designed to simplify the rendering of 
@@ -49,8 +55,12 @@ by Zachary Kniebel
    
 ## Version and Release Notes
 
+v1.1.0 (beta) April 2, 2013
+   - Refactored and reorganized namespace to better match Twitter's API
+   - Added statuses/filter and search/tweets
+   - Added library documentation
 
-   v1.0 (alpha) - April 1st, 2013  
+-- Created Branch: v1.1 (beta) - April 2, 2013 --
+-- Created Branch (backup): v1.0 (alpha) - April 1st, 2013 -- 
    
    
-## More documentation for this library will be added as soon as possible.

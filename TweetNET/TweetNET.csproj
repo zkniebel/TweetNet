@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\TweetNET.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -43,16 +44,32 @@
     <Compile Include="OAuth\OAuthInstance.cs" />
     <Compile Include="OAuth\SecurityTokens.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Requests\GET\StatusByIDGETRequest.cs" />
-    <Compile Include="Requests\GET\UserTimelineGETRequest.cs" />
-    <Compile Include="Requests\Globals\Common.cs" />
-    <Compile Include="Requests\Parameters\Encoding.cs" />
-    <Compile Include="Requests\Parameters\RequestParameter.cs" />
-    <Compile Include="Requests\Parameters\RequestParameterCollection.cs" />
+    <Compile Include="Globals\Common.cs" />
+    <Compile Include="Parameters\Encoding.cs" />
+    <Compile Include="Parameters\RequestParameter.cs" />
+    <Compile Include="Parameters\RequestParameterCollection.cs" />
     <Compile Include="Requests\Request.cs" />
+    <Compile Include="Requests\Search\TweetsRequest.cs" />
+    <Compile Include="Requests\Streaming\Statuses\FilterRequest.cs" />
+    <Compile Include="Requests\Timelines\Statuses\UserTimelineRequest.cs" />
+    <Compile Include="Requests\Tweets\Show\ByIDRequest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Requests\POST\" />
+    <Folder Include="Requests\DirectMessages\" />
+    <Folder Include="Requests\Favorites\" />
+    <Folder Include="Requests\FriendsAndFollowers\" />
+    <Folder Include="Requests\Help\" />
+    <Folder Include="Requests\Lists\" />
+    <Folder Include="Requests\OAuth\" />
+    <Folder Include="Requests\PlacesAndGeo\" />
+    <Folder Include="Requests\SavedSearches\" />
+    <Folder Include="Requests\SpamReporting\" />
+    <Folder Include="Requests\SuggestedUsers\" />
+    <Folder Include="Requests\Trends\" />
+    <Folder Include="Requests\Users\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Security.Cryptography;
-using TweetNET.Requests.Parameters;
+using TweetNET.Parameters;
 
 namespace TweetNET.OAuth {
     /// <summary>
@@ -78,7 +78,7 @@ namespace TweetNET.OAuth {
             reqParams.Sort();
             
             var baseString = string.Join(
-                TweetNET.Requests.Globals.Common.COMMON_STRING_AMPERSAND,
+                TweetNET.Globals.Common.COMMON_STRING_AMPERSAND,
                 reqParams);
             
             return baseString;
@@ -124,7 +124,7 @@ namespace TweetNET.OAuth {
         public static string GetCompositeKey(string consumerSecret, string oAuthTokenSecret) {
             return string.Concat(
                     Uri.EscapeDataString(consumerSecret),
-                    TweetNET.Requests.Globals.Common.COMMON_STRING_AMPERSAND, 
+                    TweetNET.Globals.Common.COMMON_STRING_AMPERSAND, 
                     Uri.EscapeDataString(oAuthTokenSecret)
                 );
         }

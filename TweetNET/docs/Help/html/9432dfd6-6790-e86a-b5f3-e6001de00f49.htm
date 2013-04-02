@@ -1,0 +1,98 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp">
+  <head>
+    <link rel="SHORTCUT ICON" href="./../icons/favicon.ico" />
+    <style type="text/css">.OH_CodeSnippetContainerTabLeftActive, .OH_CodeSnippetContainerTabLeft,.OH_CodeSnippetContainerTabLeftDisabled { backgroundImageName: tabLeftBG.gif; }.OH_CodeSnippetContainerTabRightActive, .OH_CodeSnippetContainerTabRight,.OH_CodeSnippetContainerTabRightDisabled { backgroundImageName: tabRightBG.gif; }.OH_footer { backgroundImageName: footer_slice.gif; background-position: top; background-repeat: repeat-x; }</style>
+    <link rel="stylesheet" type="text/css" href="./../styles/branding.css" />
+    <link rel="stylesheet" type="text/css" href="./../styles/branding-en-US.css" />
+    <style type="text/css">
+			body
+			{
+			border-left:5px solid #e6e6e6;
+			overflow-x:scroll;
+			overflow-y:scroll;
+			}
+		</style>
+    <script src="./../scripts/branding.js" type="text/javascript">
+      <!---->
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>UserTimelineRequest Properties</title>
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="UserTimelineRequest class, properties" />
+    <meta name="Microsoft.Help.Id" content="Properties.T:TweetNET.Requests.Timelines.Statuses.UserTimelineRequest" />
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    <meta name="BrandingAware" content="'true'" />
+    <meta name="container" content="TweetNET.Requests.Timelines.Statuses" />
+    <meta name="file" content="9432dfd6-6790-e86a-b5f3-e6001de00f49" />
+    <meta name="guid" content="9432dfd6-6790-e86a-b5f3-e6001de00f49" />
+    
+    <meta name="SelfBranded" content="true" />
+  </head>
+  <body onload="onLoad()" class="primary-mtps-offline-document">
+    <div class="OH_outerDiv">
+      <div class="OH_outerContent">
+        <table class="TitleTable">
+          <tr>
+            <td class="OH_tdTitleColumn">UserTimelineRequest Properties</td>
+            <td class="OH_tdRunningTitleColumn">TweetNET API Documentation</td>
+          </tr>
+        </table>
+        <div id="mainSection">
+          <div id="mainBody">
+            <span class="introStyle"></span>The <a href="a7c6c2c6-bbd5-7fcc-c5b5-be71044caf5a.htm" target="">UserTimelineRequest</a> type exposes the following members.<div class="OH_CollapsibleAreaRegion"><div class="OH_regiontitle">Properties</div><div class="OH_CollapsibleArea_HrDiv"><hr class="OH_CollapsibleArea_Hr" /></div></div><div class="OH_clear"></div><table id="memberList" class="members"><tr><th class="ps_iconColumn">
+							 
+						</th><th class="ps_nameColumn">Name</th><th class="ps_descriptionColumn">Description</th></tr><tr data="public;declared;notNetfw;"><td><img src="./../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="42a3558c-6f19-8f1b-a40a-ae85944e8aa0.htm" target="">Contributor_Details</a></td><td><div class="summary">
+            (optional) - 
+            This parameter enhances the contributors element of the status response to include the 
+            screen_name of the contributor. 
+            <p>
+            By default only the user_id of the contributor is included.
+            </p></div></td></tr><tr data="public;declared;notNetfw;"><td><img src="./../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="5dc2c9d1-b9b2-c302-ec8e-18cb74a07ff3.htm" target="">Count</a></td><td><div class="summary">
+            (optional) - 
+            Specifies the number of tweets to try and retrieve, up to a maximum of 200 per distinct
+            request.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="./../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="461baeb8-93a0-02d3-2782-239281e4fac8.htm" target="">Exclude_Replies</a></td><td><div class="summary">
+            (optional) - 
+            This parameter will prevent replies from appearing in the returned timeline. 
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="./../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="192c9057-e28c-a2b0-a882-46e36e87ca35.htm" target="">Include_RTS</a></td><td><div class="summary">
+            (optional) - 
+            When set to false, the timeline will strip any native retweets (though they will still 
+            count toward both the maximal length of the timeline and the slice selected by the 
+            count parameter). 
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="./../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="2bd13e90-15b6-3c18-b3f3-3bf3383f3f52.htm" target="">Max_ID</a></td><td><div class="summary">
+            (optional) - 
+            Returns results with an ID less than (that is, older than) or equal to the specified ID.
+            </div></td></tr><tr data="public;inherited;notNetfw;"><td><img src="./../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="7188c776-1455-65fe-ae2a-98b96812f7d6.htm" target="">OAuth</a></td><td><div class="summary">
+            OAuthInstance to generate all necessary oAuth headers, and signatures that are required for the request
+            </div> (Inherited from <a href="e32f124a-2785-8bed-402d-69057ffe54d4.htm" target="">Request</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="./../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="24dfdb92-e530-01b2-2b9a-cb292e12e514.htm" target="">RequestMethod</a></td><td><div class="summary">
+            Method to be used for the request (GET or POST)
+            </div> (Inherited from <a href="e32f124a-2785-8bed-402d-69057ffe54d4.htm" target="">Request</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="./../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="6545fc83-d09d-3bb8-a473-778000602862.htm" target="">RequestParams</a></td><td><div class="summary">
+            List of request-specific parameters
+            </div> (Inherited from <a href="e32f124a-2785-8bed-402d-69057ffe54d4.htm" target="">Request</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="./../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="f757c979-f1aa-9f69-17c3-bc798be9bda6.htm" target="">ResourceURL</a></td><td><div class="summary">
+            URL to which the request should be sent
+            </div> (Inherited from <a href="e32f124a-2785-8bed-402d-69057ffe54d4.htm" target="">Request</a>.)</td></tr><tr data="public;declared;notNetfw;"><td><img src="./../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="e55b93b4-99ae-2079-244b-0de25eae5c40.htm" target="">Screen_Name</a></td><td><div class="summary">
+            (one of User_ID and Screen_Name must be set) - 
+            The screen name of the user for whom to return results for.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="./../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="38adcbfa-f27d-aa58-7806-f1d15ab26783.htm" target="">Since_ID</a></td><td><div class="summary">
+            (optional) - 
+            Returns results with an ID greater than (that is, more recent than) the specified ID. 
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="./../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="9d5991b1-bdcb-f3f7-4441-f1b5a279faed.htm" target="">Trim_User</a></td><td><div class="summary">
+            (optional) - 
+            When set to either true, t or 1, each tweet returned in a timeline will include a user 
+            object including only the status authors numerical ID. 
+            <p>
+            Omit this parameter to receive the complete user object.
+            </p></div></td></tr><tr data="public;declared;notNetfw;"><td><img src="./../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="a0886240-c92b-8a48-41d9-100b01029ccf.htm" target="">User_ID</a></td><td><div class="summary">
+            (one of User_ID and Screen_Name must be set) - 
+            ID of the user for whom to return results for.
+            </div></td></tr></table><a href="#mainBody" target="">Back to Top</a><a name="seeAlsoSection"><!----></a><div class="OH_CollapsibleAreaRegion"><div class="OH_regiontitle">See Also</div><div class="OH_CollapsibleArea_HrDiv"><hr class="OH_CollapsibleArea_Hr" /></div></div><div class="OH_clear"></div><div class="seeAlsoStyle"><a href="a7c6c2c6-bbd5-7fcc-c5b5-be71044caf5a.htm" target="">UserTimelineRequest Class</a></div><div class="seeAlsoStyle"><a href="3a95d4b7-3cfc-2814-975d-dc13a590efd5.htm" target="">TweetNET.Requests.Timelines.Statuses Namespace</a></div></div>
+        </div>
+      </div>
+    </div>
+    <div id="OH_footer" class="OH_footer">
+      <p />
+      <div class="OH_feedbacklink">
+        <a href="mailto:?subject=TweetNET+API+Documentation+UserTimelineRequest+Properties+100+EN-US&amp;body=Your%20feedback%20is%20used%20to%20improve%20the%20documentation%20and%20the%20product.%20Your%20e-mail%20address%20will%20not%20be%20used%20for%20any%20other%20purpose%20and%20is%20disposed%20of%20after%20the%20issue%20you%20report%20is%20resolved.%20While%20working%20to%20resolve%20the%20issue%20that%20you%20report%2c%20you%20may%20be%20contacted%20via%20e-mail%20to%20get%20further%20details%20or%20clarification%20on%20the%20feedback%20you%20sent.%20After%20the%20issue%20you%20report%20has%20been%20addressed%2c%20you%20may%20receive%20an%20e-mail%20to%20let%20you%20know%20that%20your%20feedback%20has%20been%20addressed.">Send Feedback</a> on this topic.</div>
+    </div>
+  </body>
+</html>
