@@ -23,7 +23,11 @@ by Zachary Kniebel
    will have to look up the request parameters that you need/want in the 
    request at http://dev.twitter.com/. You may also inherit the Request
    class to build onto the library, using the inheriting classes for 
-   the implemented request types as a guide. 
+   the implemented request types as a guide. Please remember that v1.0 is
+   still in alpha testing. Namespace and class-name changes may occur 
+   between v1.0 and v1.1 (beta), which is targeted for Wednesday, April 
+   3rd, 2013. All namespace and class-name changes will be documented and
+   noted in the commit logs, for each class that they effect. 
 
    
 ## Making a request
@@ -42,5 +46,11 @@ by Zachary Kniebel
    request that was used to retrieve them. For more information, view the
    repository at https://github.com/zkniebel/jquery-twitter-feed.
 
+   
+## Version and Release Notes
+
+
+   v1.0 (alpha) - April 1st, 2013  
+   
    
 ## More documentation for this library will be added as soon as possible.
