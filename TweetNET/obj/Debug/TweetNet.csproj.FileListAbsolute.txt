@@ -9,3 +9,4 @@ C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNet\obj\Debug\ResolveA
 C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNet\obj\Debug\TweetNet.dll
 C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNet\obj\Debug\TweetNet.pdb
 C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNet\bin\Debug\TweetNET.dll.config
+C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNet\bin\Debug\TweetNET.XML

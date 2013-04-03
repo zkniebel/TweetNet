@@ -48,7 +48,7 @@
     <Compile Include="Parameters\Encoding.cs" />
     <Compile Include="Parameters\RequestParameter.cs" />
     <Compile Include="Parameters\RequestParameterCollection.cs" />
-    <Compile Include="Requests\Request.cs" />
+    <Compile Include="Requests\RequestBuilder.cs" />
     <Compile Include="Requests\Search\TweetsRequest.cs" />
     <Compile Include="Requests\Streaming\Statuses\FilterRequest.cs" />
     <Compile Include="Requests\Timelines\Statuses\UserTimelineRequest.cs" />

@@ -4,163 +4,14 @@
         <name>TweetNET</name>
     </assembly>
     <members>
-        <member name="T:TweetNET.OAuth.OAuthInstance">
-            <summary>
-            Class to hold methods for generating required oAuth data and structures for authenticating a request to the Twitter API
-            </summary>
-        </member>
-        <member name="F:TweetNET.OAuth.OAuthInstance.OAuthVersion">
-            <summary>
-            oAuth Version (default: "1.0")
-            </summary>
-        </member>
-        <member name="F:TweetNET.OAuth.OAuthInstance.OAuthSignatureMethod">
-            <summary>
-            oAuth Signature Mehtod to be used (default: "HMAC-SHA1")
-            </summary>
-        </member>
-        <member name="M:TweetNET.OAuth.OAuthInstance.#ctor(TweetNET.OAuth.SecurityTokens)">
-            <summary>
-            Creates a new OAuthInstance instance
-            </summary>
-            <param name="tokens">SecurityTokens object containing all necessary keys and tokens for oAuth authentication</param>
-        </member>
-        <member name="M:TweetNET.OAuth.OAuthInstance.GetOAuthBaseString(TweetNET.Parameters.RequestParameterCollection)">
-            <summary>
-            Gets the OAuth security part of the base string for a web request
-            </summary>
-            <param name="requestParams">Collection of request-specific parameters</param>
-            <returns>String - OAuth portion of base string</returns>
-        </member>
-        <member name="M:TweetNET.OAuth.OAuthInstance.GetOAuthHeader(System.String)">
-            <summary>
-            Gets the oAuth authorization header, based on the given oAuth Signature string
-            </summary>
-            <param name="signature">oAuth Signature string</param>
-            <returns>unique oAuth authorization header for this OAuthInstance</returns>
-        </member>
-        <member name="M:TweetNET.OAuth.OAuthInstance.GetCompositeKey">
-            <summary>
-            Gets the parsed composite key for the authorization secrets stored the this instance's Token property
-            </summary>
-            <returns>Parsed composite key string</returns>
-        </member>
-        <member name="M:TweetNET.OAuth.OAuthInstance.GetCompositeKey(System.String,System.String)">
-            <summary>
-            Gets the parsed composite key for the given authorization secrets
-            </summary>
-            <param name="consumerSecret">Consumer Secret assigned by Twitter</param>
-            <param name="oAuthTokenSecret">oAuth Token Secret assigned by Twitter</param>
-            <returns>Parsed composite key string</returns>
-        </member>
-        <member name="M:TweetNET.OAuth.OAuthInstance.GetOAuthSignature(System.String)">
-            <summary>
-            Gets the oAuth signature based on the given base string
-            </summary>
-            <param name="baseString">The basestring generated for the request that this signature is to be used for</param>
-            <returns>oAuth signature string</returns>
-        </member>
-        <member name="M:TweetNET.OAuth.OAuthInstance.GetOAuthSignature(System.String,System.String)">
-            <summary>
-            Gets the oAuth signature based on the given base string and composite key
-            </summary>
-            <param name="baseString">The basestring generated for the request that this signature is to be used for</param>
-            <param name="compositeKey">The composite key parsed from the authorization secrets assigned by Twitter</param>
-            <returns>oAuth signature string</returns>
-        </member>
-        <member name="P:TweetNET.OAuth.OAuthInstance.Tokens">
-            <summary>
-            Security object containing the necessary Twitter-app-specific keys and tokens necessary for oAuth authentication
-            </summary>
-        </member>
-        <member name="P:TweetNET.OAuth.OAuthInstance.OAuthNonce">
-            <summary>
-            Unique, ASCII-encoded, base 64 timestamp for request authorization
-            </summary>
-        </member>
-        <member name="P:TweetNET.OAuth.OAuthInstance.OAuthTimeStamp">
-            <summary>
-            Unique, base 64 timestamp for request authorization
-            </summary>
-        </member>
-        <member name="T:TweetNET.Requests.Request">
-            <summary>
-            Abstract class to manage the building and sending of Twitter API requests
-            </summary>
-        </member>
-        <member name="F:TweetNET.Requests.Request.Expect100Continue">
-            <summary>
-            Determines whether or not the ServicePointManager should expect 100-Continue responses for POST requests (default: true)
-            </summary>
-        </member>
-        <member name="F:TweetNET.Requests.Request.ContentType">
-            <summary>
-            Sets the content type of the request data to be sent (default: "application/x-www-form-urlencoded")
-            </summary>
-        </member>
-        <member name="M:TweetNET.Requests.Request.#ctor(TweetNET.Requests.Request.RequestMethods,System.String,TweetNET.Parameters.RequestParameterCollection,TweetNET.OAuth.SecurityTokens)">
-            <summary>
-            Creates a new instance of the RequestManager class
-            </summary>
-            <param name="requestMethod">Method to be used for the request (GET or POST)</param>
-            <param name="resourceURL">URL to which the request should be sent</param>
-            <param name="requestParams">List of request-specific parameters</param>
-            <param name="oAuthTokens">oAuth keys, tokens and secrets used to authorize the request</param>
-        </member>
-        <member name="M:TweetNET.Requests.Request.GetBaseString">
-            <summary>
-            Gets the base string of the request
-            </summary>
-            <returns>Base string of the request</returns>
-        </member>
-        <member name="M:TweetNET.Requests.Request.BuildRequest">
-            <summary>
-            Builds an HttpWebRequest object for making a request to the Twitter API
-            </summary>
-            <returns>HttpWebRequest object</returns>
-        </member>
-        <member name="M:TweetNET.Requests.Request.BuildRequest(System.String)">
-            <summary>
-            Builds an HttpWebRequest object for making a request to the Twitter API, using the given composite key
-            </summary>
-            <param name="compositeKey">Composite key to be used for the request</param>
-            <returns>HttpWebRequest object</returns>
-        </member>
-        <member name="M:TweetNET.Requests.Request.SendRequest(System.Net.HttpWebRequest)">
-            <summary>
-            Sends the given HttpWebRequest and returns the response
-            </summary>
-            <param name="request">object representation of the request to be sent</param>
-            <returns>Response from the sent request</returns>
-        </member>
-        <member name="P:TweetNET.Requests.Request.RequestParams">
-            <summary>
-            List of request-specific parameters
-            </summary>
-        </member>
-        <member name="P:TweetNET.Requests.Request.ResourceURL">
-            <summary>
-            URL to which the request should be sent
-            </summary>
-        </member>
-        <member name="P:TweetNET.Requests.Request.RequestMethod">
-            <summary>
-            Method to be used for the request (GET or POST)
-            </summary>
-        </member>
-        <member name="P:TweetNET.Requests.Request.OAuth">
-            <summary>
-            OAuthInstance to generate all necessary oAuth headers, and signatures that are required for the request
-            </summary>
-        </member>
         <member name="T:TweetNET.OAuth.SecurityTokens">
             <summary>
-            Class to hold all of the authorization tokens and keys assigned by Twitter
+            Class to hold all of the authorization keys, tokens and secrets assigned by Twitter
             </summary>
         </member>
         <member name="M:TweetNET.OAuth.SecurityTokens.#ctor(System.String,System.String,System.String,System.String)">
             <summary>
-            Creates a new SecurityTokens instance
+            Creates a new <see cref="T:TweetNET.OAuth.SecurityTokens"/> instance
             </summary>
             <param name="ConsumerKey">Consumer Key assigned by Twitter</param>
             <param name="ConsumerSecret">Consumer Secret assigned by Twitter</param>
@@ -222,87 +73,224 @@
             The value to be assigned to the parameter
             </summary>
         </member>
+        <member name="T:TweetNET.Parameters.RequestParameterCollection">
+            <summary>
+            Class representation of a list of <see cref="T:TweetNET.Parameters.RequestParameter"/> objects
+            </summary>
+            <remarks>
+            Note that this class inherits <see cref="T:System.Collections.Generic.List`1"/> and overloads the <see cref="M:System.Collections.Generic.List`1.Add(`0)"/> method. The overloading method should almost 
+            always be used when adding <see cref="T:TweetNET.Parameters.RequestParameter"/> objects to the collection.
+            </remarks>
+        </member>
+        <member name="M:TweetNET.Parameters.RequestParameterCollection.Add(System.String,System.String)">
+            <summary>
+            Adds a new <see cref="T:TweetNET.Parameters.RequestParameter"/> object with the given key and value to the collection
+            </summary>
+            <param name="key">The <see cref="P:TweetNET.Parameters.RequestParameter.Key"/> of the <see cref="T:TweetNET.Parameters.RequestParameter"/> object to add</param>
+            <param name="value">The <see cref="P:TweetNET.Parameters.RequestParameter.Value"/> of the <see cref="T:TweetNET.Parameters.RequestParameter"/> object to add</param>
+        </member>
         <member name="T:TweetNET.Requests.Streaming.Statuses.FilterRequest">
             <summary>
-            
+            Class used for requesting public statuses that match one or more filter predicates. 
+            </summary>
+            <remarks>
+            Multiple parameters may be specified which allows most clients to use a single connection to the Streaming API. Both GET and POST 
+            requests are supported, but GET requests with too many parameters may cause the request to be rejected for excessive URL length. 
+            Use a POST request to avoid long URLs.
+            <para>
+            The track, follow, and locations fields should be considered to be combined with an OR operator. track=foo&amp;follow=1234 returns 
+            Tweets matching "foo" OR created by user 1234.
+            </para>
+            The default access level allows up to 400 track keywords, 5,000 follow userids and 25 0.1-360 degree location boxes. If you need 
+            elevated access to the Streaming API, you should explore our partner providers of Twitter data here.
+            </remarks>
+        </member>
+        <member name="T:TweetNET.Requests.RequestBuilder">
+            <summary>
+            Class to manage the building and sending of Twitter API requests
             </summary>
         </member>
-        <member name="M:TweetNET.Requests.Streaming.Statuses.FilterRequest.#ctor(TweetNET.Requests.Request.RequestMethods,TweetNET.OAuth.SecurityTokens)">
+        <member name="F:TweetNET.Requests.RequestBuilder.Expect100Continue">
             <summary>
-            Creates a new StatusesFilterGETRequest instance
+            Determines whether or not the <see cref="T:System.Net.ServicePointManager"/> should expect 100-Continue responses for POST requests (default: true)
             </summary>
-            <param name="requestMethod">Enum value representing the desired request method (either GET or POST)</param>
-            <param name="tokens">A SecurityTokens object that holds all of the keys, tokens and secrets assigned by Twitter</param>
+        </member>
+        <member name="F:TweetNET.Requests.RequestBuilder.ContentType">
+            <summary>
+            Sets the content type of the request data to be sent (default: "application/x-www-form-urlencoded")
+            </summary>
+        </member>
+        <member name="M:TweetNET.Requests.RequestBuilder.#ctor(TweetNET.Requests.RequestBuilder.RequestMethods,System.String,TweetNET.Parameters.RequestParameterCollection,TweetNET.OAuth.SecurityTokens)">
+            <summary>
+            Creates a new instance of the <see cref="T:TweetNET.Requests.RequestBuilder"/> class
+            </summary>
+            <param name="requestMethod">The method of the request (GET or POST)</param>
+            <param name="resourceURL">URL to which the request should be sent</param>
+            <param name="requestParams">List of request-specific parameters</param>
+            <param name="oAuthTokens">oAuth keys, tokens and secrets used to authorize the request</param>
+        </member>
+        <member name="M:TweetNET.Requests.RequestBuilder.GetBaseString">
+            <summary>
+            Gets the base string of the request
+            </summary>
+            <returns>Base string of the request</returns>
+        </member>
+        <member name="M:TweetNET.Requests.RequestBuilder.BuildRequest">
+            <summary>
+            Builds an <see cref="T:System.Net.HttpWebRequest"/> object for making a request to the Twitter API
+            </summary>
+            <returns>HttpWebRequest object</returns>
+        </member>
+        <member name="M:TweetNET.Requests.RequestBuilder.BuildRequest(System.String)">
+            <summary>
+            Builds an <see cref="T:System.Net.HttpWebRequest"/> object for making a request to the Twitter API, using the given composite key
+            </summary>
+            <param name="compositeKey">Composite key to be used for the request</param>
+            <returns><see cref="T:System.Net.HttpWebRequest"/> object</returns>
+        </member>
+        <member name="M:TweetNET.Requests.RequestBuilder.SendRequest(System.Net.HttpWebRequest)">
+            <summary>
+            Sends the given <see cref="T:System.Net.HttpWebRequest"/> and returns the response
+            </summary>
+            <param name="request"><see cref="T:System.Net.HttpWebRequest"/> to be sent</param>
+            <returns>Response from the sent request</returns>
+        </member>
+        <member name="P:TweetNET.Requests.RequestBuilder.RequestParams">
+            <summary>
+            List of request-specific parameters
+            </summary>
+        </member>
+        <member name="P:TweetNET.Requests.RequestBuilder.ResourceURL">
+            <summary>
+            URL to which the request should be sent
+            </summary>
+        </member>
+        <member name="P:TweetNET.Requests.RequestBuilder.RequestMethod">
+            <summary>
+            The method of the request (GET or POST)
+            </summary>
+        </member>
+        <member name="P:TweetNET.Requests.RequestBuilder.OAuth">
+            <summary>
+            OAuthInstance to generate all necessary oAuth headers, and signatures that are required for the request
+            </summary>
+        </member>
+        <member name="T:TweetNET.Requests.RequestBuilder.RequestMethods">
+            <summary>
+            Enumeration of request methods
+            </summary>
+        </member>
+        <member name="F:TweetNET.Requests.RequestBuilder.RequestMethods.GET">
+            <summary>
+            Enumerated item representing the GET request method
+            </summary>
+        </member>
+        <member name="F:TweetNET.Requests.RequestBuilder.RequestMethods.POST">
+            <summary>
+            Enumerated item representing the POST request method
+            </summary>
+        </member>
+        <member name="M:TweetNET.Requests.Streaming.Statuses.FilterRequest.#ctor(TweetNET.Requests.RequestBuilder.RequestMethods,TweetNET.OAuth.SecurityTokens)">
+            <summary>
+            Creates a new <see cref="T:TweetNET.Requests.Streaming.Statuses.FilterRequest"/> instance
+            </summary>
+            <param name="requestMethod"><see cref="T:TweetNET.Requests.RequestBuilder.RequestMethods"/> value representing the desired request method (either GET or POST)</param>
+            <param name="tokens">
+            <see cref="T:TweetNET.OAuth.SecurityTokens"/> object that holds all of the keys, tokens and secrets assigned by Twitter for authorizing the request
+            </param>
         </member>
         <member name="P:TweetNET.Requests.Streaming.Statuses.FilterRequest.Follow">
             <summary>
-            (optional) - 
-            A comma separated list of user IDs, indicating the users to return statuses for in the stream. 
             <para>
-            See the follow parameter documentation for more information (https://dev.twitter.com/docs/streaming-apis/parameters#follow)
+            (At least one of <see cref="P:TweetNET.Requests.Streaming.Statuses.FilterRequest.Track"/>, <see cref="P:TweetNET.Requests.Streaming.Statuses.FilterRequest.Follow"/>, or <see cref="P:TweetNET.Requests.Streaming.Statuses.FilterRequest.Locations"/> must 
+            be specified)
             </para>
+            A comma separated list of user IDs, indicating the users to return statuses for in the stream. 
             </summary>
+            <remarks>
+            See the <a href="https://dev.twitter.com/docs/streaming-apis/parameters#follow">follow parameter documentation</a> for more information 
+            </remarks>
         </member>
         <member name="P:TweetNET.Requests.Streaming.Statuses.FilterRequest.Track">
             <summary>
-            (optional) - 
-            
+            <para>
+            (At least one of <see cref="P:TweetNET.Requests.Streaming.Statuses.FilterRequest.Track"/>, <see cref="P:TweetNET.Requests.Streaming.Statuses.FilterRequest.Follow"/>, or <see cref="P:TweetNET.Requests.Streaming.Statuses.FilterRequest.Locations"/> must 
+            be specified)
+            </para>
+            Keywords to track. Phrases of keywords are specified by a comma-separated list. 
             </summary>
+            <remarks>
+            See the <a href="https://dev.twitter.com/docs/streaming-apis/parameters#track">track parameter documentation</a> for more information 
+            </remarks>
         </member>
         <member name="P:TweetNET.Requests.Streaming.Statuses.FilterRequest.Locations">
             <summary>
-            (optional) - 
-            
+            <para>
+            (At least one of <see cref="P:TweetNET.Requests.Streaming.Statuses.FilterRequest.Track"/>, <see cref="P:TweetNET.Requests.Streaming.Statuses.FilterRequest.Follow"/>, or <see cref="P:TweetNET.Requests.Streaming.Statuses.FilterRequest.Locations"/> must 
+            be specified)
+            </para>
+            Specifies a set of bounding boxes to track. 
             </summary>
-            <example></example>
+            <remarks>
+            See the <a href="https://dev.twitter.com/docs/streaming-apis/parameters#locations">locations parameter documentation</a> for more information 
+            </remarks>
         </member>
         <member name="P:TweetNET.Requests.Streaming.Statuses.FilterRequest.Delimited">
             <summary>
             (optional) - 
-            
+            Specifies whether messages should be length-delimited. 
             </summary>
-            <example></example>
+            <remarks>
+            See the <a href="https://dev.twitter.com/docs/streaming-apis/parameters#delimited">delimited parameter documentation</a> for more information 
+            </remarks>
         </member>
         <member name="P:TweetNET.Requests.Streaming.Statuses.FilterRequest.Stall_Warnings">
             <summary>
             (optional) - 
-            
+            Specifies whether stall warnings should be delivered. 
             </summary>
-            <example></example>
+            <remarks>
+            See the <a href="https://dev.twitter.com/docs/streaming-apis/parameters#stall_warnings">stall_warnings parameter documentation</a> for more information
+            </remarks>
         </member>
         <member name="T:TweetNET.Requests.Timelines.Statuses.UserTimelineRequest">
             <summary>
-            <para>
-            Returns a collection of the most recent Tweets posted by the user indicated by the screen_name or user_id parameters. 
-            </para>
+            Class used for requesting a collection of the most recent Tweets posted by a specified user
+            </summary>
+            <remarks>
             <para>
             User timelines belonging to protected users may only be requested when the authenticated user either "owns" the timeline or is an approved 
             follower of the owner. 
             </para>
-            </summary>
-            <remarks>
             The  timeline returned is the equivalent of the one seen when you view a user's profile on twitter.com. This method can only return up to 3,200 of a 
             user's most recent Tweets. Native retweets of other statuses by the user is included in this total, regardless of whether include_rts is set to 
             false when requesting this resource.
             </remarks>
         </member>
-        <member name="M:TweetNET.Requests.Timelines.Statuses.UserTimelineRequest.#ctor(TweetNET.OAuth.SecurityTokens)">
+        <member name="M:TweetNET.Requests.Timelines.Statuses.UserTimelineRequest.#ctor(System.String,TweetNET.OAuth.SecurityTokens)">
             <summary>
-            Creates a new UserTimelineRequest instance
+            Creates a new <see cref="T:TweetNET.Requests.Timelines.Statuses.UserTimelineRequest"/> instance
             </summary>
-            <param name="oAuthTokens">oAuth keys, tokens and secrets used to authorize the request</param>
+            <param name="screen_name">The twitter handle of the user whose timeline is being retrieved</param>
+            <param name="oAuthTokens">
+            <see cref="T:TweetNET.OAuth.SecurityTokens"/> object containing all of the oAuth keys, tokens and secrets used to authorize the request
+            </param>
         </member>
         <member name="P:TweetNET.Requests.Timelines.Statuses.UserTimelineRequest.User_ID">
             <summary>
-            (one of User_ID and Screen_Name must be set) - 
+            (one of <see cref="P:TweetNET.Requests.Timelines.Statuses.UserTimelineRequest.User_ID"/> and <see cref="P:TweetNET.Requests.Timelines.Statuses.UserTimelineRequest.Screen_Name"/> must be set)
+            <para>
             ID of the user for whom to return results for.
+            </para>
             </summary>
             <example>Example Values: "12345"</example>
         </member>
         <member name="P:TweetNET.Requests.Timelines.Statuses.UserTimelineRequest.Screen_Name">
             <summary>
-            (one of User_ID and Screen_Name must be set) - 
+            (one of <see cref="P:TweetNET.Requests.Timelines.Statuses.UserTimelineRequest.User_ID"/> and <see cref="P:TweetNET.Requests.Timelines.Statuses.UserTimelineRequest.Screen_Name"/> must be set)
+            <para>
             The screen name of the user for whom to return results for.
+            </para>
             </summary>
             <example>Example Values: "noradio"</example>
         </member>
@@ -386,26 +374,24 @@
         </member>
         <member name="T:TweetNET.Requests.Search.TweetsRequest">
             <summary>
-            Returns a collection of relevant Tweets matching a specified query. 
-            <para>
-            Please note that Twitter's search service and, by extension, the Search API is not meant to be an exhaustive source of Tweets. 
-            </para>
-            <para>
-            Not all Tweets will be indexed or made available via the search interface.
-            </para>
+            Class used for requesting a collection of relevant Tweets matching a specified query. 
             </summary>
             <remarks>
             In API v1.1, the response format of the Search API has been improved to return Tweet objects more similar to the objects you'll 
             find across the REST API and platform. You may need to tolerate some inconsistencies and variance in perspectival values (fields that 
             pertain to the perspective of the authenticating user) and embedded user objects.
+            <para>
+            Please note that Twitter's search service and, by extension, the Search API is not meant to be an exhaustive source of Tweets. Not all Tweets 
+            will be indexed or made available via the search interface.
+            </para>
             </remarks>
         </member>
         <member name="M:TweetNET.Requests.Search.TweetsRequest.#ctor(System.String,TweetNET.OAuth.SecurityTokens)">
             <summary>
-            Creates a new SearchTweetsGETRequest instance
+            Creates a new <see cref="T:TweetNET.Requests.Search.TweetsRequest"/> instance
             </summary>
-            <param name="q">UTF-8, URL-encoded search query (see the SearchTweetsGETRequest.Q property)</param>
-            <param name="tokens">The SecurityTokens object holding the security keys, tokens, and secrets assigned by Twitter</param>
+            <param name="q">UTF-8, URL-encoded search query (see the <see cref="P:TweetNET.Requests.Search.TweetsRequest.Q"/> property)</param>
+            <param name="tokens">The <see cref="T:TweetNET.OAuth.SecurityTokens"/> object holding the security keys, tokens, and secrets assigned by Twitter</param>
         </member>
         <member name="P:TweetNET.Requests.Search.TweetsRequest.Q">
             <summary>
@@ -522,15 +508,20 @@
         </member>
         <member name="T:TweetNET.Requests.Tweets.Show.ByIDRequest">
             <summary>
-            Returns a single Tweet, specified by the id parameter. The Tweet's author will also be embedded within the tweet.
+            Class used for requesting a single Tweet, specified by the <see cref="P:TweetNET.Requests.Tweets.Show.ByIDRequest.ID"/> property.
             </summary>
+            <remarks>
+            Note: The Tweet's author will also be embedded within the tweet.
+            </remarks>
         </member>
         <member name="M:TweetNET.Requests.Tweets.Show.ByIDRequest.#ctor(System.String,TweetNET.OAuth.SecurityTokens)">
             <summary>
-            Creates a new StatusByIDGETRequest instance
+            Creates a new <see cref="T:TweetNET.Requests.Tweets.Show.ByIDRequest"/> instance
             </summary>
             <param name="id">ID of the tweet to be retrieved</param>
-            <param name="oAuthTokens">oAuth security keys, tokens and secrets assigned by Twitter</param>
+            <param name="oAuthTokens">
+            <see cref="T:TweetNET.OAuth.SecurityTokens"/> object containing all of the oAuth security keys, tokens and secrets assigned by Twitter for authorizing the request
+            </param>
         </member>
         <member name="P:TweetNET.Requests.Tweets.Show.ByIDRequest.ID">
             <summary>
@@ -563,6 +554,128 @@
             The entities node will be disincluded when set to false.
             </summary>
             <example>Example Values: false</example>
+        </member>
+        <member name="T:TweetNET.Globals.Common">
+            <summary>
+            Class to hold commonly used string constants
+            </summary>
+        </member>
+        <member name="F:TweetNET.Globals.Common.REQUEST_METHOD_GET">
+            <summary>
+            String used to represent the GET request method
+            </summary>
+            <value>"GET"</value>
+        </member>
+        <member name="F:TweetNET.Globals.Common.REQUEST_METHOD_POST">
+            <summary>
+            String used to represent the POST request method
+            </summary>
+            <value>
+            "POST"
+            </value>
+        </member>
+        <member name="F:TweetNET.Globals.Common.STRING_FORMAT_AMPERSAND_DELIM">
+            <summary>
+            Ampersand-delimited string format
+            </summary>
+            <value>
+            "{0}&amp;{1}"
+            </value>
+        </member>
+        <member name="F:TweetNET.Globals.Common.STRING_FORMAT_QUESTION_MARK_DELIM">
+            <summary>
+            Question mark-delimited string format
+            </summary>
+            <value>
+            "{0}?{1}"
+            </value>
+        </member>
+        <member name="F:TweetNET.Globals.Common.COMMON_STRING_AMPERSAND">
+            <summary>
+            String consisting of, and only of an ampersand
+            </summary>
+            <value>
+            "&amp;"
+            </value>
+        </member>
+        <member name="T:TweetNET.OAuth.OAuthInstance">
+            <summary>
+            Class to hold methods for generating required oAuth data and structures for authenticating a request to the Twitter API
+            </summary>
+        </member>
+        <member name="F:TweetNET.OAuth.OAuthInstance.OAuthVersion">
+            <summary>
+            oAuth Version (default: "1.0")
+            </summary>
+        </member>
+        <member name="F:TweetNET.OAuth.OAuthInstance.OAuthSignatureMethod">
+            <summary>
+            oAuth Signature Mehtod to be used (default: "HMAC-SHA1")
+            </summary>
+        </member>
+        <member name="M:TweetNET.OAuth.OAuthInstance.#ctor(TweetNET.OAuth.SecurityTokens)">
+            <summary>
+            Creates a new <see cref="T:TweetNET.OAuth.OAuthInstance"/> instance
+            </summary>
+            <param name="tokens"><see cref="T:TweetNET.OAuth.SecurityTokens"/> object containing all necessary keys and tokens for oAuth authentication</param>
+        </member>
+        <member name="M:TweetNET.OAuth.OAuthInstance.GetOAuthBaseString(TweetNET.Parameters.RequestParameterCollection)">
+            <summary>
+            Gets the OAuth security portion of the base string for a web request
+            </summary>
+            <param name="requestParams">Collection of request-specific parameters</param>
+            <returns>String - OAuth portion of base string</returns>
+        </member>
+        <member name="M:TweetNET.OAuth.OAuthInstance.GetOAuthHeader(System.String)">
+            <summary>
+            Gets the oAuth authorization header, based on the given oAuth Signature string
+            </summary>
+            <param name="signature">oAuth Signature string</param>
+            <returns>unique oAuth authorization header for this <see cref="T:TweetNET.OAuth.OAuthInstance"/></returns>
+        </member>
+        <member name="M:TweetNET.OAuth.OAuthInstance.GetCompositeKey">
+            <summary>
+            Gets the parsed composite key for the authorization secrets stored the this instance's <see cref="P:TweetNET.OAuth.OAuthInstance.Tokens"/> property
+            </summary>
+            <returns>Parsed composite key string</returns>
+        </member>
+        <member name="M:TweetNET.OAuth.OAuthInstance.GetCompositeKey(System.String,System.String)">
+            <summary>
+            Gets the parsed composite key for the given authorization secrets
+            </summary>
+            <param name="consumerSecret">Consumer Secret assigned by Twitter</param>
+            <param name="oAuthTokenSecret">oAuth Token Secret assigned by Twitter</param>
+            <returns>Parsed composite key string</returns>
+        </member>
+        <member name="M:TweetNET.OAuth.OAuthInstance.GetOAuthSignature(System.String)">
+            <summary>
+            Gets the oAuth signature based on the given base string
+            </summary>
+            <param name="baseString">The basestring generated for the request that this signature is to be used for</param>
+            <returns>oAuth signature string</returns>
+        </member>
+        <member name="M:TweetNET.OAuth.OAuthInstance.GetOAuthSignature(System.String,System.String)">
+            <summary>
+            Gets the oAuth signature based on the given base string and composite key
+            </summary>
+            <param name="baseString">The basestring generated for the request that this signature is to be used for</param>
+            <param name="compositeKey">The composite key parsed from the authorization secrets assigned by Twitter</param>
+            <returns>oAuth signature string</returns>
+        </member>
+        <member name="P:TweetNET.OAuth.OAuthInstance.Tokens">
+            <summary>
+            Contains the Twitter-app-specific keys, tokens and secrets necessary for oAuth authentication
+            </summary>
+        </member>
+        <member name="P:TweetNET.OAuth.OAuthInstance.OAuthNonce">
+            <summary>
+            Unique, ASCII-encoded, base 64 timestamp for request authorization
+            </summary>
+        </member>
+        <member name="P:TweetNET.OAuth.OAuthInstance.OAuthTimeStamp">
+            <summary>
+            Unique, base 64 timestamp for request authorization
+            </summary>
         </member>
     </members>
 </doc>

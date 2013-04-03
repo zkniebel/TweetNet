@@ -7,20 +7,18 @@ using TweetNET.Parameters;
 
 namespace TweetNET.Requests.Search {
     /// <summary>
-    /// Returns a collection of relevant Tweets matching a specified query. 
-    /// <para>
-    /// Please note that Twitter's search service and, by extension, the Search API is not meant to be an exhaustive source of Tweets. 
-    /// </para>
-    /// <para>
-    /// Not all Tweets will be indexed or made available via the search interface.
-    /// </para>
+    /// Class used for requesting a collection of relevant Tweets matching a specified query. 
     /// </summary>
     /// <remarks>
     /// In API v1.1, the response format of the Search API has been improved to return Tweet objects more similar to the objects you'll 
     /// find across the REST API and platform. You may need to tolerate some inconsistencies and variance in perspectival values (fields that 
     /// pertain to the perspective of the authenticating user) and embedded user objects.
+    /// <para>
+    /// Please note that Twitter's search service and, by extension, the Search API is not meant to be an exhaustive source of Tweets. Not all Tweets 
+    /// will be indexed or made available via the search interface.
+    /// </para>
     /// </remarks>
-    public class TweetsRequest : Request {
+    public class TweetsRequest : RequestBuilder {
         private const string Q_KEY = "q";
         private const string GEOCODE_KEY = "geocode";
         private const string LANG_KEY = "lang";
@@ -237,12 +235,12 @@ namespace TweetNET.Requests.Search {
         }
 
         /// <summary>
-        /// Creates a new SearchTweetsGETRequest instance
+        /// Creates a new <see cref="TweetsRequest"/> instance
         /// </summary>
-        /// <param name="q">UTF-8, URL-encoded search query (see the SearchTweetsGETRequest.Q property)</param>
-        /// <param name="tokens">The SecurityTokens object holding the security keys, tokens, and secrets assigned by Twitter</param>
+        /// <param name="q">UTF-8, URL-encoded search query (see the <see cref="TweetsRequest.Q"/> property)</param>
+        /// <param name="tokens">The <see cref="SecurityTokens"/> object holding the security keys, tokens, and secrets assigned by Twitter</param>
         public TweetsRequest(string q, SecurityTokens tokens)
-            : base(RequestMethods.GET, Globals.Common.RESOURCE_URL_SEARCH_TWEETS, new RequestParameterCollection(), tokens) {
+            : base(RequestMethods.GET, "https://api.twitter.com/1.1/search/tweets.json", new RequestParameterCollection(), tokens) {
             Q = q;
         }
     }

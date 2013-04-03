@@ -8,22 +8,20 @@ using System.Net;
 
 namespace TweetNET.Requests.Timelines.Statuses {
     /// <summary>
-    /// <para>
-    /// Returns a collection of the most recent Tweets posted by the user indicated by the screen_name or user_id parameters. 
-    /// </para>
+    /// Class used for requesting a collection of the most recent Tweets posted by a specified user
+    /// </summary>
+    /// <remarks>
     /// <para>
     /// User timelines belonging to protected users may only be requested when the authenticated user either "owns" the timeline or is an approved 
     /// follower of the owner. 
     /// </para>
-    /// </summary>
-    /// <remarks>
     /// The  timeline returned is the equivalent of the one seen when you view a user's profile on twitter.com. This method can only return up to 3,200 of a 
     /// user's most recent Tweets. Native retweets of other statuses by the user is included in this total, regardless of whether include_rts is set to 
     /// false when requesting this resource.
     /// </remarks>
-    public class UserTimelineRequest : Request {
+    public class UserTimelineRequest : RequestBuilder {
         private const string USER_ID_KEY = "user_id";
-        private const string SCREEN_NAME_KEY = "screen_name"; 
+        private const string SCREEN_NAME_KEY = "screen_name";
         private const string SINCE_ID_KEY = "since_id";
         private const string COUNT_KEY = "count";
         private const string MAX_ID_KEY = "max_id";
@@ -43,8 +41,10 @@ namespace TweetNET.Requests.Timelines.Statuses {
         private string _Include_RTS = string.Empty;
 
         /// <summary>
-        /// (one of User_ID and Screen_Name must be set) - 
+        /// (one of <see cref="User_ID"/> and <see cref="Screen_Name"/> must be set)
+        /// <para>
         /// ID of the user for whom to return results for.
+        /// </para>
         /// </summary>
         /// <example>Example Values: "12345"</example>
         public string User_ID {
@@ -57,8 +57,10 @@ namespace TweetNET.Requests.Timelines.Statuses {
             }
         }
         /// <summary>
-        /// (one of User_ID and Screen_Name must be set) - 
+        /// (one of <see cref="User_ID"/> and <see cref="Screen_Name"/> must be set)
+        /// <para>
         /// The screen name of the user for whom to return results for.
+        /// </para>
         /// </summary>
         /// <example>Example Values: "noradio"</example>
         public string Screen_Name {
@@ -199,19 +201,15 @@ namespace TweetNET.Requests.Timelines.Statuses {
         }
 
         /// <summary>
-        /// Creates a new UserTimelineRequest instance
+        /// Creates a new <see cref="UserTimelineRequest"/> instance
         /// </summary>
-        /// <param name="oAuthTokens">oAuth keys, tokens and secrets used to authorize the request</param>
-        public UserTimelineRequest(SecurityTokens oAuthTokens)
-            : base(RequestMethods.GET, Globals.Common.RESOURCE_URL_USER_TIMELINE, new RequestParameterCollection(), oAuthTokens) {
-        }
-
-        public override HttpWebRequest BuildRequest(string compositeKey) {
-            if (Screen_Name != string.Empty || User_ID != string.Empty) {
-                return base.BuildRequest(compositeKey);
-            } else {
-                throw new Exception("Request not built: A User ID or Screen Name must be supplied for this request");
-            }
+        /// <param name="screen_name">The twitter handle of the user whose timeline is being retrieved</param>
+        /// <param name="oAuthTokens">
+        /// <see cref="SecurityTokens"/> object containing all of the oAuth keys, tokens and secrets used to authorize the request
+        /// </param>
+        public UserTimelineRequest(string screen_name, SecurityTokens oAuthTokens)
+            : base(RequestMethods.GET, "https://api.twitter.com/1.1/statuses/user_timeline.json", new RequestParameterCollection(), oAuthTokens) {
+            Screen_Name = screen_name;
         }
     }
 }

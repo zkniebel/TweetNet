@@ -19,16 +19,16 @@ namespace TweetNET.OAuth {
         /// </summary>
         private string OAuthSignatureMethod = "HMAC-SHA1";
 
-        private SecurityTokens _OAuthTokens;
+        private SecurityTokens _Tokens;
         private string _OAuthNonce;
         private string _OAuthTimeStamp;
 
         /// <summary>
-        /// Security object containing the necessary Twitter-app-specific keys and tokens necessary for oAuth authentication
+        /// Contains the Twitter-app-specific keys, tokens and secrets necessary for oAuth authentication
         /// </summary>
         public SecurityTokens Tokens {
             get {
-                return _OAuthTokens;
+                return _Tokens;
             }
         }
         /// <summary>
@@ -49,11 +49,11 @@ namespace TweetNET.OAuth {
         }
 
         /// <summary>
-        /// Creates a new OAuthInstance instance
+        /// Creates a new <see cref="OAuthInstance"/> instance
         /// </summary>
-        /// <param name="tokens">SecurityTokens object containing all necessary keys and tokens for oAuth authentication</param>
+        /// <param name="tokens"><see cref="SecurityTokens"/> object containing all necessary keys and tokens for oAuth authentication</param>
         public OAuthInstance(SecurityTokens tokens) {
-            _OAuthTokens = tokens;
+            _Tokens = tokens;
             _OAuthNonce = Convert.ToBase64String(new ASCIIEncoding().GetBytes(DateTime.Now.Ticks.ToString()));
             _OAuthTimeStamp = Convert.ToInt64(
                 (DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc)).TotalSeconds
@@ -61,7 +61,7 @@ namespace TweetNET.OAuth {
         }
 
         /// <summary>
-        /// Gets the OAuth security part of the base string for a web request
+        /// Gets the OAuth security portion of the base string for a web request
         /// </summary>
         /// <param name="requestParams">Collection of request-specific parameters</param>
         /// <returns>String - OAuth portion of base string</returns>
@@ -88,7 +88,7 @@ namespace TweetNET.OAuth {
         /// Gets the oAuth authorization header, based on the given oAuth Signature string
         /// </summary>
         /// <param name="signature">oAuth Signature string</param>
-        /// <returns>unique oAuth authorization header for this OAuthInstance</returns>
+        /// <returns>unique oAuth authorization header for this <see cref="OAuthInstance"/></returns>
         public string GetOAuthHeader(string signature) {
             //create the request header
             var headerFormat = "OAuth oauth_nonce=\"{0}\", oauth_signature_method=\"{1}\", " +
@@ -108,7 +108,7 @@ namespace TweetNET.OAuth {
         }
 
         /// <summary>
-        /// Gets the parsed composite key for the authorization secrets stored the this instance's Token property
+        /// Gets the parsed composite key for the authorization secrets stored the this instance's <see cref="OAuthInstance.Tokens"/> property
         /// </summary>
         /// <returns>Parsed composite key string</returns>
         public string GetCompositeKey() {

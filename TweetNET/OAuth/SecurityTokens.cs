@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TweetNET.OAuth {
     /// <summary>
-    /// Class to hold all of the authorization tokens and keys assigned by Twitter
+    /// Class to hold all of the authorization keys, tokens and secrets assigned by Twitter
     /// </summary>
     public class SecurityTokens {
         private string _ConsumerKey;
@@ -59,7 +59,7 @@ namespace TweetNET.OAuth {
         }
 
         /// <summary>
-        /// Creates a new SecurityTokens instance
+        /// Creates a new <see cref="SecurityTokens"/> instance
         /// </summary>
         /// <param name="ConsumerKey">Consumer Key assigned by Twitter</param>
         /// <param name="ConsumerSecret">Consumer Secret assigned by Twitter</param>

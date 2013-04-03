@@ -7,9 +7,12 @@ using TweetNET.Parameters;
 
 namespace TweetNET.Requests.Tweets.Show {
     /// <summary>
-    /// Returns a single Tweet, specified by the id parameter. The Tweet's author will also be embedded within the tweet.
+    /// Class used for requesting a single Tweet, specified by the <see cref="ByIDRequest.ID"/> property.
     /// </summary>
-    public class ByIDRequest : Request {
+    /// <remarks>
+    /// Note: The Tweet's author will also be embedded within the tweet.
+    /// </remarks>
+    public class ByIDRequest : RequestBuilder {
         private const string ID_KEY = "id";
         private const string TRIM_USER_KEY = "trim_user";
         private const string INCLUDE_MY_RETWEET_KEY = "include_my_retweet";
@@ -78,12 +81,14 @@ namespace TweetNET.Requests.Tweets.Show {
         }
 
         /// <summary>
-        /// Creates a new StatusByIDGETRequest instance
+        /// Creates a new <see cref="ByIDRequest"/> instance
         /// </summary>
         /// <param name="id">ID of the tweet to be retrieved</param>
-        /// <param name="oAuthTokens">oAuth security keys, tokens and secrets assigned by Twitter</param>
-        public ByIDRequest(string id, SecurityTokens oAuthTokens) 
-            : base(RequestMethods.GET, Globals.Common.RESOURCE_URL_STATUS_BY_ID, new RequestParameterCollection(), oAuthTokens) {
+        /// <param name="oAuthTokens">
+        /// <see cref="SecurityTokens"/> object containing all of the oAuth security keys, tokens and secrets assigned by Twitter for authorizing the request
+        /// </param>
+        public ByIDRequest(string id, SecurityTokens oAuthTokens)
+            : base(RequestMethods.GET, "https://api.twitter.com/1.1/statuses/show.json", new RequestParameterCollection(), oAuthTokens) {
                 ID = id;
         }
     }

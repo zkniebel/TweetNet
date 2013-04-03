@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shfbBuild product="Sandcastle Help File Builder" version="1.9.6.0" projectFile="C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNET\docs\TweetNET API.shfbproj" started="4/2/2013 12:51:33 PM">
+<shfbBuild product="Sandcastle Help File Builder" version="1.9.6.0" projectFile="C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNET\docs\TweetNET API.shfbproj" started="4/2/2013 11:29:14 PM">
 <buildStep step="Initializing">
 Finding tools...
 Found Sandcastle tools in &#39;C:\Program Files (x86)\Sandcastle\&#39;
@@ -20,7 +20,7 @@ Copying XML comments files
 </buildStep>
 <buildStep step="GenerateSharedContent">
 Generating shared content files (en-US, English (United States))...
-    Last step completed in 00:00:00.0220
+    Last step completed in 00:00:00.0190
 </buildStep>
 <buildStep step="GenerateApiFilter">
 Generating API filter for MRefBuilder...
@@ -32,22 +32,22 @@ Generating reflection information...
   MRefBuilder (v2.7.2.0)
   Copyright c 2006-2012, Microsoft Corporation, All Rights Reserved
   Info: Loaded 1 assemblies for reflection and 0 dependency assemblies.
-  Info: Wrote information on 8 namespaces, 12 types, and 149 members
+  Info: Wrote information on 8 namespaces, 12 types, and 144 members
   XslTransform (v2.7.2.0)
   Copyright c 2006-2012, Microsoft Corporation, All Rights Reserved
   Info: Applying XSL transformation &#39;C:\Program Files (x86)\Sandcastle\ProductionTransforms\MergeDuplicates.xsl&#39;.
-    Last step completed in 00:00:01.4290
+    Last step completed in 00:00:01.3711
 </buildStep>
 <buildStep step="GenerateNamespaceSummaries">
 Generating namespace summary information...
-    Last step completed in 00:00:00.0020
+    Last step completed in 00:00:00.0040
 </buildStep>
 <buildStep step="ApplyVisibilityProperties">
 Applying visibility properties to reflection information file
     69 private fields noted for removal
     0 private framework fields noted for removal
     Removing previously noted unwanted APIs and elements
-    Last step completed in 00:00:00.0620
+    Last step completed in 00:00:00.0630
 </buildStep>
 <buildStep step="TransformReflectionInfo">
 Transforming reflection output...
@@ -59,12 +59,12 @@ Transforming reflection output...
   XslTransform (v2.7.2.0)
   Copyright c 2006-2012, Microsoft Corporation, All Rights Reserved
   Info: Applying XSL transformation &#39;C:\Program Files (x86)\Sandcastle\ProductionTransforms\ReflectionToManifest.xsl&#39;.
-    Last step completed in 00:00:01.3890
+    Last step completed in 00:00:01.3121
 </buildStep>
 <buildStep step="ModifyHelpTopicFilenames">
 Modifying help topic filenames in reflection information file
     No changes required
-    Last step completed in 00:00:00.0330
+    Last step completed in 00:00:00.0340
 </buildStep>
 <buildStep step="CopyStandardContent">
 Copying standard help content...
@@ -456,16 +456,16 @@ C:\Program Files (x86)\Sandcastle\\Presentation\VS2010\branding -&gt; C:\inetpub
     C:\Program Files (x86)\Sandcastle\Presentation\VS2010\branding\ps-instrumentedLink.xslt -> C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNET\docs\Help\Working\branding\ps-instrumentedLink.xslt
     C:\Program Files (x86)\Sandcastle\Presentation\VS2010\branding\ps-languageSpecificText.xslt -> C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNET\docs\Help\Working\branding\ps-languageSpecificText.xslt
     C:\Program Files (x86)\Sandcastle\Presentation\VS2010\branding\ps-codesnippet.xslt -> C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNET\docs\Help\Working\branding\ps-codesnippet.xslt
-    Last step completed in 00:00:01.7500
+    Last step completed in 00:00:01.7391
 </buildStep>
 <buildStep step="CopyAdditionalContent">
 Copying additional content files...
 No additional content to copy
-    Last step completed in 00:00:00.0070
+    Last step completed in 00:00:00.0090
 </buildStep>
 <buildStep step="MergeTablesOfContents">
 Merging conceptual and additional tables of contents...
-    Last step completed in 00:00:00.0060
+    Last step completed in 00:00:00.0090
 </buildStep>
 <buildStep step="GenerateIntermediateTableOfContents">
 Generating intermediate table of contents file...
@@ -477,12 +477,12 @@ Generating conceptual content intermediate TOC file...
 <plugIn name="Hierarchical Table of Contents" behavior="After" priority="1000">
 Retrieving namespace topic title from shared content...
 Creating namespace hierarchy...
-</plugIn>    Last step completed in 00:00:00.4140
+</plugIn>    Last step completed in 00:00:00.4500
 </buildStep>
 <buildStep step="CreateBuildAssemblerConfigs">
 Creating Sandcastle configuration files...
     sandcastle.config
-    Last step completed in 00:00:00.0200
+    Last step completed in 00:00:00.0220
 </buildStep>
 <buildStep step="MergeCustomConfigs">
 Merging custom build component configurations
@@ -494,7 +494,9 @@ C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNET\docs\Help\Working\
     Replaced configuration for &#39;Microsoft.Ddue.Tools.ResolveReferenceLinksComponent2&#39; (instance 1) with configuration for &#39;Cached MSDN URL References&#39;
     Replaced configuration for &#39;Microsoft.Ddue.Tools.ResolveReferenceLinksComponent2&#39; (instance 1) with configuration for &#39;Cached MSDN URL References&#39;
     Replacing default configuration for &#39;Code Block Component&#39; with the custom configuration
-    Last step completed in 00:00:00.0700
+    Replaced configuration for &#39;Microsoft.Ddue.Tools.CopyFromIndexComponent&#39; (instance 3) with configuration for &#39;Cached Framework Comments Index Data&#39;
+    Replaced configuration for &#39;Microsoft.Ddue.Tools.CopyFromIndexComponent&#39; (instance 1) with configuration for &#39;Cached Reflection Index Data&#39;
+    Last step completed in 00:00:00.0770
 </buildStep>
 <buildStep step="BuildReferenceTopics">
 Building reference help topics...
@@ -503,11 +505,15 @@ Building reference help topics...
   Copyright c 2006-2012, Microsoft Corporation, All Rights Reserved
   Info: CopyFromFileComponent: Instantiating component.
   Info: CopyFromFileComponent: Loading data file &#39;C:\Program Files (x86)\Sandcastle\\Presentation\VS2010\Transforms\skeleton.xml&#39;.
-  Info: CopyFromIndexComponent: Instantiating component.
-  Info: CopyFromIndexComponent: Searching for files that match &#39;*.xml&#39; in &#39;C:\Program Files (x86)\Sandcastle\Data\Reflection&#39;.
-  Info: CopyFromIndexComponent: Searching for files that match &#39;reflection.xml&#39;.
-  Info: CopyFromIndexComponent: Indexed 193964 elements in 410 files.
-  Info: CopyFromIndexComponent: Loaded 0 copy components.
+  Info: CachedCopyFromIndexComponent: Instantiating component.
+  Info: CachedCopyFromIndexComponent: Searching for files that match &#39;reflection.xml&#39;.
+  Info: CachedCopyFromIndexComponent: Indexed 137 elements in 1 files.
+  Info: CachedCopyFromIndexComponent: Loaded 0 copy components.
+  Info: CachedCopyFromIndexComponent: 
+      [Sandcastle Help File Builder, version 1.9.6.0]
+      Cached Copy From Index  Component.  Copyright c 2006-2012, Eric Woodruff, All Rights Reserved
+      http://SHFB.CodePlex.com
+  Info: CachedCopyFromIndexComponent: Loaded 193822 items from the cache file &#39;C:\Users\zkniebel\AppData\Local\EWSoftware\Sandcastle Help File Builder\Cache\Reflection.cache&#39;
   Info: CopyFromIndexComponent: Instantiating component.
   Info: CopyFromIndexComponent: Loaded 0 copy components.
   Info: ForEachComponent: Instantiating component.
@@ -548,12 +554,16 @@ Building reference help topics...
   Info: IfThenComponent: Instantiating component.
   Info: SyntaxComponent: Instantiating component.
   Info: SyntaxComponent: Loaded 3 syntax generators.
-  Info: CopyFromIndexComponent: Instantiating component.
-  Info: CopyFromIndexComponent: Searching for files that match &#39;*.xml&#39; in &#39;C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0&#39;.
-  Info: CopyFromIndexComponent: Searching for files that match &#39;*.xml&#39; in &#39;C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\2.0\Runtime\v4.0&#39;.
-  Info: CopyFromIndexComponent: Searching for files that match &#39;C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNET\docs\Help\Working\TweetNET.XML&#39;.
-  Info: CopyFromIndexComponent: Indexed 145492 elements in 128 files.
-  Info: CopyFromIndexComponent: Loaded 0 copy components.
+  Info: CachedCopyFromIndexComponent: Instantiating component.
+  Info: CachedCopyFromIndexComponent: Searching for files that match &#39;C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNET\docs\Help\Working\TweetNET.XML&#39;.
+  Info: CachedCopyFromIndexComponent: Indexed 94 elements in 1 files.
+  Info: CachedCopyFromIndexComponent: Loaded 0 copy components.
+  Info: CachedCopyFromIndexComponent: 
+      [Sandcastle Help File Builder, version 1.9.6.0]
+      Cached Copy From Index  Component.  Copyright c 2006-2012, Eric Woodruff, All Rights Reserved
+      http://SHFB.CodePlex.com
+  Info: CachedCopyFromIndexComponent: Loaded 144084 items from the cache file &#39;C:\Users\zkniebel\AppData\Local\EWSoftware\Sandcastle Help File Builder\Cache\.NETFramework_4.0.30319_F0754620.cache&#39;
+  Info: CachedCopyFromIndexComponent: Loaded 1326 items from the cache file &#39;C:\Users\zkniebel\AppData\Local\EWSoftware\Sandcastle Help File Builder\Cache\.NETFramework_4.0.30319_8010FBEB.cache&#39;
   Info: ForEachComponent: Instantiating component.
   Info: ForEachComponent: Loading subcomponents.
   Info: IfThenComponent: Instantiating component.
@@ -633,12 +643,12 @@ Building reference help topics...
   Info: CachedResolveReferenceLinksComponent: Creating MSDN URL resolver.
   Info: CachedResolveReferenceLinksComponent: Searching directory &#39;C:\Program Files (x86)\Sandcastle\Data\Reflection&#39; for targets files of the form &#39;*.xml&#39;.
   Info: CachedResolveReferenceLinksComponent: Searching directory &#39;C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNET\docs\Help\Working&#39; for targets files of the form &#39;reflection.xml&#39;.
-  Info: CachedResolveReferenceLinksComponent: Loaded 193964 reference targets.
+  Info: CachedResolveReferenceLinksComponent: Loaded 193959 reference targets.
   Info: CachedResolveReferenceLinksComponent: 
       [Sandcastle Help File Builder, version 1.9.6.0]
       Cached Resolve Reference  Links 2 Component.  Copyright c 2006-2012, Eric Woodruff, All Rights Reserved
       http://SHFB.CodePlex.com
-  Info: CachedResolveReferenceLinksComponent: Loaded 85 cached MSDN URL entries
+  Info: CachedResolveReferenceLinksComponent: Loaded 86 cached MSDN URL entries
   Info: BrandingComponent: Instantiating component.
   Info: BrandingComponent: Branding Transform &quot;C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNET\docs\Help\Working\branding\branding-en-us.xslt&quot; catalogProductFamily=VS catalogProductVersion=100 catalogLocale=en-us
   Info: SaveComponent: Instantiating component.
@@ -686,15 +696,16 @@ Building reference help topics...
   Info: CachedResolveReferenceLinksComponent: Creating MSDN URL resolver.
   Info: CachedResolveReferenceLinksComponent: Searching directory &#39;C:\Program Files (x86)\Sandcastle\Data\Reflection&#39; for targets files of the form &#39;*.xml&#39;.
   Info: CachedResolveReferenceLinksComponent: Searching directory &#39;C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNET\docs\Help\Working&#39; for targets files of the form &#39;reflection.xml&#39;.
-  Info: CachedResolveReferenceLinksComponent: Loaded 193964 reference targets.
+  Info: CachedResolveReferenceLinksComponent: Loaded 193959 reference targets.
   Info: CachedResolveReferenceLinksComponent: 
       [Sandcastle Help File Builder, version 1.9.6.0]
       Cached Resolve Reference  Links 2 Component.  Copyright c 2006-2012, Eric Woodruff, All Rights Reserved
       http://SHFB.CodePlex.com
-  Info: CachedResolveReferenceLinksComponent: Loaded 85 cached MSDN URL entries
+  Info: CachedResolveReferenceLinksComponent: Loaded 86 cached MSDN URL entries
   Info: BrandingComponent: Instantiating component.
   Info: BrandingComponent: Branding Transform &quot;C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNET\docs\Help\Working\branding\branding-en-us.xslt&quot; catalogProductFamily=VS catalogProductVersion=100 catalogLocale=en-us
   Info: SaveComponent: Instantiating component.
+  Info: BuildAssembler: Building topic R:Project_TweetNET_Documentation
   Info: BuildAssembler: Building topic N:TweetNET.Globals
   Info: BuildAssembler: Building topic T:TweetNET.Globals.Common
   Info: BuildAssembler: Building topic AllMembers.T:TweetNET.Globals.Common
@@ -704,10 +715,6 @@ Building reference help topics...
   Info: BuildAssembler: Building topic F:TweetNET.Globals.Common.COMMON_STRING_AMPERSAND
   Info: BuildAssembler: Building topic F:TweetNET.Globals.Common.REQUEST_METHOD_GET
   Info: BuildAssembler: Building topic F:TweetNET.Globals.Common.REQUEST_METHOD_POST
-  Info: BuildAssembler: Building topic F:TweetNET.Globals.Common.RESOURCE_URL_SEARCH_TWEETS
-  Info: BuildAssembler: Building topic F:TweetNET.Globals.Common.RESOURCE_URL_STATUS_BY_ID
-  Info: BuildAssembler: Building topic F:TweetNET.Globals.Common.RESOURCE_URL_STATUSES_FILTER
-  Info: BuildAssembler: Building topic F:TweetNET.Globals.Common.RESOURCE_URL_USER_TIMELINE
   Info: BuildAssembler: Building topic F:TweetNET.Globals.Common.STRING_FORMAT_AMPERSAND_DELIM
   Info: BuildAssembler: Building topic F:TweetNET.Globals.Common.STRING_FORMAT_QUESTION_MARK_DELIM
   Info: BuildAssembler: Building topic N:TweetNET.OAuth
@@ -758,24 +765,24 @@ Building reference help topics...
   Info: BuildAssembler: Building topic M:TweetNET.Parameters.RequestParameterCollection.#ctor
   Info: BuildAssembler: Building topic M:TweetNET.Parameters.RequestParameterCollection.Add(System.String,System.String)
   Info: BuildAssembler: Building topic N:TweetNET.Requests
-  Info: BuildAssembler: Building topic T:TweetNET.Requests.Request
-  Info: BuildAssembler: Building topic AllMembers.T:TweetNET.Requests.Request
-  Info: BuildAssembler: Building topic Methods.T:TweetNET.Requests.Request
-  Info: BuildAssembler: Building topic Properties.T:TweetNET.Requests.Request
-  Info: BuildAssembler: Building topic Fields.T:TweetNET.Requests.Request
-  Info: BuildAssembler: Building topic Overload:TweetNET.Requests.Request.BuildRequest
-  Info: BuildAssembler: Building topic M:TweetNET.Requests.Request.#ctor(TweetNET.Requests.Request.RequestMethods,System.String,TweetNET.Parameters.RequestParameterCollection,TweetNET.OAuth.SecurityTokens)
-  Info: BuildAssembler: Building topic M:TweetNET.Requests.Request.BuildRequest
-  Info: BuildAssembler: Building topic M:TweetNET.Requests.Request.BuildRequest(System.String)
-  Info: BuildAssembler: Building topic F:TweetNET.Requests.Request.ContentType
-  Info: BuildAssembler: Building topic F:TweetNET.Requests.Request.Expect100Continue
-  Info: BuildAssembler: Building topic M:TweetNET.Requests.Request.GetBaseString
-  Info: BuildAssembler: Building topic P:TweetNET.Requests.Request.OAuth
-  Info: BuildAssembler: Building topic P:TweetNET.Requests.Request.RequestMethod
-  Info: BuildAssembler: Building topic P:TweetNET.Requests.Request.RequestParams
-  Info: BuildAssembler: Building topic P:TweetNET.Requests.Request.ResourceURL
-  Info: BuildAssembler: Building topic M:TweetNET.Requests.Request.SendRequest(System.Net.HttpWebRequest)
-  Info: BuildAssembler: Building topic T:TweetNET.Requests.Request.RequestMethods
+  Info: BuildAssembler: Building topic T:TweetNET.Requests.RequestBuilder
+  Info: BuildAssembler: Building topic AllMembers.T:TweetNET.Requests.RequestBuilder
+  Info: BuildAssembler: Building topic Methods.T:TweetNET.Requests.RequestBuilder
+  Info: BuildAssembler: Building topic Properties.T:TweetNET.Requests.RequestBuilder
+  Info: BuildAssembler: Building topic Fields.T:TweetNET.Requests.RequestBuilder
+  Info: BuildAssembler: Building topic Overload:TweetNET.Requests.RequestBuilder.BuildRequest
+  Info: BuildAssembler: Building topic M:TweetNET.Requests.RequestBuilder.#ctor(TweetNET.Requests.RequestBuilder.RequestMethods,System.String,TweetNET.Parameters.RequestParameterCollection,TweetNET.OAuth.SecurityTokens)
+  Info: BuildAssembler: Building topic M:TweetNET.Requests.RequestBuilder.BuildRequest
+  Info: BuildAssembler: Building topic M:TweetNET.Requests.RequestBuilder.BuildRequest(System.String)
+  Info: BuildAssembler: Building topic F:TweetNET.Requests.RequestBuilder.ContentType
+  Info: BuildAssembler: Building topic F:TweetNET.Requests.RequestBuilder.Expect100Continue
+  Info: BuildAssembler: Building topic M:TweetNET.Requests.RequestBuilder.GetBaseString
+  Info: BuildAssembler: Building topic P:TweetNET.Requests.RequestBuilder.OAuth
+  Info: BuildAssembler: Building topic P:TweetNET.Requests.RequestBuilder.RequestMethod
+  Info: BuildAssembler: Building topic P:TweetNET.Requests.RequestBuilder.RequestParams
+  Info: BuildAssembler: Building topic P:TweetNET.Requests.RequestBuilder.ResourceURL
+  Info: BuildAssembler: Building topic M:TweetNET.Requests.RequestBuilder.SendRequest(System.Net.HttpWebRequest)
+  Info: BuildAssembler: Building topic T:TweetNET.Requests.RequestBuilder.RequestMethods
   Info: BuildAssembler: Building topic N:TweetNET.Requests.Search
   Info: BuildAssembler: Building topic T:TweetNET.Requests.Search.TweetsRequest
   Info: BuildAssembler: Building topic AllMembers.T:TweetNET.Requests.Search.TweetsRequest
@@ -800,7 +807,7 @@ Building reference help topics...
   Info: BuildAssembler: Building topic Methods.T:TweetNET.Requests.Streaming.Statuses.FilterRequest
   Info: BuildAssembler: Building topic Properties.T:TweetNET.Requests.Streaming.Statuses.FilterRequest
   Info: BuildAssembler: Building topic Fields.T:TweetNET.Requests.Streaming.Statuses.FilterRequest
-  Info: BuildAssembler: Building topic M:TweetNET.Requests.Streaming.Statuses.FilterRequest.#ctor(TweetNET.Requests.Request.RequestMethods,TweetNET.OAuth.SecurityTokens)
+  Info: BuildAssembler: Building topic M:TweetNET.Requests.Streaming.Statuses.FilterRequest.#ctor(TweetNET.Requests.RequestBuilder.RequestMethods,TweetNET.OAuth.SecurityTokens)
   Info: BuildAssembler: Building topic P:TweetNET.Requests.Streaming.Statuses.FilterRequest.Delimited
   Info: BuildAssembler: Building topic P:TweetNET.Requests.Streaming.Statuses.FilterRequest.Follow
   Info: BuildAssembler: Building topic P:TweetNET.Requests.Streaming.Statuses.FilterRequest.Locations
@@ -812,9 +819,7 @@ Building reference help topics...
   Info: BuildAssembler: Building topic Methods.T:TweetNET.Requests.Timelines.Statuses.UserTimelineRequest
   Info: BuildAssembler: Building topic Properties.T:TweetNET.Requests.Timelines.Statuses.UserTimelineRequest
   Info: BuildAssembler: Building topic Fields.T:TweetNET.Requests.Timelines.Statuses.UserTimelineRequest
-  Info: BuildAssembler: Building topic Overload:TweetNET.Requests.Timelines.Statuses.UserTimelineRequest.BuildRequest
-  Info: BuildAssembler: Building topic M:TweetNET.Requests.Timelines.Statuses.UserTimelineRequest.#ctor(TweetNET.OAuth.SecurityTokens)
-  Info: BuildAssembler: Building topic M:TweetNET.Requests.Timelines.Statuses.UserTimelineRequest.BuildRequest(System.String)
+  Info: BuildAssembler: Building topic M:TweetNET.Requests.Timelines.Statuses.UserTimelineRequest.#ctor(System.String,TweetNET.OAuth.SecurityTokens)
   Info: BuildAssembler: Building topic P:TweetNET.Requests.Timelines.Statuses.UserTimelineRequest.Contributor_Details
   Info: BuildAssembler: Building topic P:TweetNET.Requests.Timelines.Statuses.UserTimelineRequest.Count
   Info: BuildAssembler: Building topic P:TweetNET.Requests.Timelines.Statuses.UserTimelineRequest.Exclude_Replies
@@ -835,14 +840,16 @@ Building reference help topics...
   Info: BuildAssembler: Building topic P:TweetNET.Requests.Tweets.Show.ByIDRequest.Include_Entities
   Info: BuildAssembler: Building topic P:TweetNET.Requests.Tweets.Show.ByIDRequest.Include_My_Retweet
   Info: BuildAssembler: Building topic P:TweetNET.Requests.Tweets.Show.ByIDRequest.Trim_User
-  Info: Processed 140 topics
-    Last step completed in 00:00:44.8110
+  Info: Processed 135 topics
+  Info: CachedCopyFromIndexComponent: Used &quot;reflection&quot; cache entries: 3
+  Info: CachedCopyFromIndexComponent: Used &quot;comments&quot; cache entries: 3
+    Last step completed in 00:00:39.5153
 </buildStep>
 <buildStep step="CombiningIntermediateTocFiles">
 Combining conceptual and API intermediate TOC files...
 
 Clearing any prior web output
-    Last step completed in 00:00:00.1490
+    Last step completed in 00:00:00.1450
 </buildStep>
 <buildStep step="ExtractingHtmlInfo">
 Extracting HTML info for HTML Help 1 and/or website...
@@ -854,17 +861,17 @@ E-Mail: Eric@EWoodruff.us
 Using LCID &#39;1033&#39;, code page &#39;65001&#39;, encoding charset &#39;UTF-8&#39;.
 
 Processing Help 1 files in C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNET\docs\Help\Working\Output\HtmlHelp1
-Processed 140 HTML files
+Processed 135 HTML files
 Sorting keywords and generating See Also indices
 Saving HTML Help 1 keyword index to C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNET\docs\Help\Working\TweetNET_Documentation.hhk
 Saving HTML Help 1 table of contents to C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNET\docs\Help\Working\TweetNET_Documentation.hhc
 
 Processing website files in C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNET\docs\Help\Working\Output\Website
-Processed 140 HTML files
+Processed 135 HTML files
 Sorting keywords and generating See Also indices
 Saving website keyword index to C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNET\docs\Help\Working\WebKI.xml
 Saving website table of contents to C:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNET\docs\Help\Working\WebTOC.xml
-    Last step completed in 00:00:01.7830
+    Last step completed in 00:00:02.4221
 </buildStep>
 <buildStep step="GenerateHelpFormatTableOfContents">
 Generating HTML Help 1 table of contents file...
@@ -872,11 +879,11 @@ Generating HTML Help 1 table of contents file...
 </buildStep>
 <buildStep step="GenerateHelpFileIndex">
 Generating HTML Help 1 index file...
-    Last step completed in 00:00:00.0040
+    Last step completed in 00:00:00.0050
 </buildStep>
 <buildStep step="GenerateHelpProject">
 Generating HTML Help 1 project file...
-    Last step completed in 00:00:00.0140
+    Last step completed in 00:00:00.0170
 </buildStep>
 <buildStep step="CompilingHelpFile">
 Compiling HTML Help 1 file...
@@ -893,11 +900,11 @@ Compiling HTML Help 1 file...
   
   Compile time: 0 minutes, 1 second
   
-  142	Topics
+  137	Topics
   
-  1,780	Local links
+  1,795	Local links
   
-  1,008	Internet links
+  1,048	Internet links
   
   0	Graphics
   
@@ -905,36 +912,36 @@ Compiling HTML Help 1 file...
   
   
   
-  Created c:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNET\docs\Help\Working\Output\HtmlHelp1\TweetNET_Documentation.chm, 254,659 bytes
+  Created c:\inetpub\wwwroot\Library Projects\twitter\TweetNet\TweetNET\docs\Help\Working\Output\HtmlHelp1\TweetNET_Documentation.chm, 265,137 bytes
   
-  Compression decreased file by 1,433,998 bytes.
+  Compression decreased file by 1,460,249 bytes.
   
-    Last step completed in 00:00:01.9230
+    Last step completed in 00:00:01.7161
 </buildStep>
 <buildStep step="GenerateHelpFormatTableOfContents">
 Generating website table of contents file...
-    Last step completed in 00:00:00.0040
+    Last step completed in 00:00:00.0060
 </buildStep>
 <buildStep step="GenerateFullTextIndex">
 Generating full-text index for the website...
 
-    Last step completed in 00:00:01.0690
+    Last step completed in 00:00:00.7060
 </buildStep>
 <buildStep step="CopyingWebsiteFiles">
 Copying website files to output folder...
 
 Copied 100 files
 Copied 200 files
-Copied 239 files for the website content
-    Last step completed in 00:00:00.9250
+Copied 234 files for the website content
+    Last step completed in 00:00:01.4301
 </buildStep>
 <buildStep step="CleanIntermediates">
 Removing intermediate files...
-    Last step completed in 00:00:00.2330
+    Last step completed in 00:00:00.2260
 </buildStep>
 <buildStep step="Completed">
 
-Build completed successfully at 04/02/2013 12:52 PM.  Total time: 00:00:56.2910
+Build completed successfully at 04/02/2013 11:30 PM.  Total time: 00:00:51.4839
 
 </buildStep>
 </shfbBuild>

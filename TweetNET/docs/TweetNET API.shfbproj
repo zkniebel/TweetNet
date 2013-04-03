@@ -28,15 +28,14 @@
     <CleanIntermediates>True</CleanIntermediates>
     <SyntaxFilters>CSharp, VisualBasic, AspNet</SyntaxFilters>
     <SdkLinkTarget>Blank</SdkLinkTarget>
-    <RootNamespaceTitle>
-    </RootNamespaceTitle>
-    <RootNamespaceContainer>False</RootNamespaceContainer>
+    <RootNamespaceTitle>TweetNET - C# .NET Twitter Integration Library</RootNamespaceTitle>
+    <RootNamespaceContainer>True</RootNamespaceContainer>
     <PresentationStyle>VS2010</PresentationStyle>
     <Preliminary>False</Preliminary>
     <NamingMethod>Guid</NamingMethod>
     <HelpTitle>TweetNET API Documentation</HelpTitle>
     <ContentPlacement>AboveNamespaces</ContentPlacement>
-    <VisibleItems>Attributes, ExplicitInterfaceImplementations, InheritedMembers, InheritedFrameworkMembers, Internals, Privates, Protected, SealedProtected, PrivateFields, InheritedFrameworkPrivateMembers, InheritedFrameworkInternalMembers</VisibleItems>
+    <VisibleItems>Attributes, ExplicitInterfaceImplementations, InheritedMembers, InheritedFrameworkMembers, Internals, Privates, Protected, SealedProtected, InheritedFrameworkPrivateMembers, InheritedFrameworkInternalMembers</VisibleItems>
     <ComponentConfigurations>
       <ComponentConfig id="API Token Resolution" enabled="True">
         <component id="API Token Resolution" type="Microsoft.Ddue.Tools.SharedContentComponent" assembly="{@SandcastlePath}ProductionTools\BuildComponents.dll">
@@ -80,7 +79,21 @@
   <outputPaths>{@HelpFormatOutputPaths}</outputPaths>
   <allowMissingSource value="false" />
   <removeRegionMarkers value="false" />
-  <colorizer syntaxFile="{@SHFBFolder}Colorizer\highlight.xml" styleFile="{@SHFBFolder}Colorizer\highlight.xsl" stylesheet="{@SHFBFolder}Colorizer\highlight.css" scriptFile="{@SHFBFolder}Colorizer\highlight.js" language="cs" tabSize="0" numberLines="true" outlining="false" keepSeeTags="false" defaultTitle="true" />
+  <colorizer syntaxFile="{@SHFBFolder}Colorizer\highlight.xml" styleFile="{@SHFBFolder}Colorizer\highlight.xsl" stylesheet="{@SHFBFolder}Colorizer\highlight.css" scriptFile="{@SHFBFolder}Colorizer\highlight.js" language="cs" tabSize="0" numberLines="true" outlining="true" keepSeeTags="false" defaultTitle="true" />
+</component></ComponentConfig>
+<ComponentConfig id="Cached Framework Comments Index Data" enabled="True"><component id="Cached Framework Comments Index Data" type="SandcastleBuilder.Components.CachedCopyFromIndexComponent" assembly="{@SHFBFolder}SandcastleBuilder.Components.dll">
+<index name="comments" value="/doc/members/member" key="@name" cache="100">
+				{@CachedFrameworkCommentList}
+				{@CommentFileList}
+			</index>
+<copy name="comments" source="*" target="/document/comments" />
+</component></ComponentConfig>
+<ComponentConfig id="Cached Reflection Index Data" enabled="True"><component id="Cached Reflection Index Data" type="SandcastleBuilder.Components.CachedCopyFromIndexComponent" assembly="{@SHFBFolder}SandcastleBuilder.Components.dll">
+<index name="reflection" value="/reflection/apis/api" key="@id" cache="10">
+  <cache base="{@SandcastlePath}Data\Reflection" recurse="true" files="*.xml" cacheFile="{@LocalDataFolder}Cache\Reflection.cache" />
+  <data files="reflection.xml" />
+</index>
+<copy name="reflection" source="*" target="/document/reference" />
 </component></ComponentConfig></ComponentConfigurations>
     <PlugInConfigurations>
       <PlugInConfig id="Hierarchical Table of Contents" enabled="True">
@@ -93,6 +106,33 @@
       <DocumentationSource sourceFile="..\bin\Debug\TweetNET.dll" />
 <DocumentationSource sourceFile="..\bin\Debug\TweetNET.XML" /></DocumentationSources>
     <MissingTags>None</MissingTags>
+    <NamespaceSummaries>
+      <NamespaceSummaryItem name="(global)" isDocumented="False" />
+<NamespaceSummaryItem name="TweetNET.Globals" isDocumented="True">Namespace for classes that contain constants to be used throughout the TweetNET library</NamespaceSummaryItem>
+<NamespaceSummaryItem name="TweetNET.OAuth" isDocumented="True">Namespace containing the methods and classes used for oAuth authentication</NamespaceSummaryItem>
+<NamespaceSummaryItem name="TweetNET.Parameters" isDocumented="True">Namespace to hold the classes and methods used for processing and holding request parameters</NamespaceSummaryItem>
+<NamespaceSummaryItem name="TweetNET.Requests" isDocumented="True">Namespace containing the classes and methods used for building and sending a web request to Twitter</NamespaceSummaryItem>
+<NamespaceSummaryItem name="TweetNET.Requests.Search" isDocumented="True">Namespace containing the classes for sending requests to Twitter in the Search category</NamespaceSummaryItem>
+<NamespaceSummaryItem name="TweetNET.Requests.Streaming.Statuses" isDocumented="True">Namespace containing the classes for sending requests to Twitter in the Streaming category</NamespaceSummaryItem>
+<NamespaceSummaryItem name="TweetNET.Requests.Timelines.Statuses" isDocumented="True">Namespace containing the classes for sending requests to Twitter in the Timelines category</NamespaceSummaryItem>
+<NamespaceSummaryItem name="TweetNET.Requests.Tweets.Show" isDocumented="True">Namespace containing the classes for sending requests to Twitter in the Tweets category</NamespaceSummaryItem></NamespaceSummaries>
+    <ProjectSummary>&amp;lt%3bh2&amp;gt%3bIntroduction&amp;lt%3b/h2&amp;gt%3b
+&amp;lt%3bp&amp;gt%3b
+This is the API for the TweetNET C# library. The purpose of this library is to better assist developers with integrating their .NET sites with Twitter, and customizing or extending the TweetNET library, should they so desire. At present, the TweetNET library is still under development, though all components are tested within four days of being created, unless otherwise noted. The README on &amp;lt%3ba href=&amp;quot%3bhttps://github.com/zkniebel/TweetNet&amp;quot%3b&amp;gt%3bTweetNET&amp;#39%3bs GitHub page&amp;lt%3b/a&amp;gt%3b is updated each time new features are added%2a and all new features are test-complete within 48-hours, unless otherwise noted.
+&amp;lt%3b/p&amp;gt%3b
+&amp;lt%3bh2&amp;gt%3bAbout&amp;lt%3b/h2&amp;gt%3b
+&amp;lt%3bp&amp;gt%3b
+TweetNET is, for all intents and purposes, a replication of Twitter&amp;#39%3bs API  %28v1.1%29, such that all of the different request resources that Twitter lists in their &amp;lt%3ba href=&amp;quot%3bhttps://dev.twitter.com/docs/api/1.1&amp;quot%3b&amp;gt%3bRest API v1.1 documentation&amp;lt%3b/a&amp;gt%3b have corresponding classes in  TweetNET that can be used to build, authorize and send a request. All of said corresponding classes are named according to Twitter&amp;#39%3bs own name for the request resource, and comments for the properties and classes are direct duplicates of Twitter&amp;#39%3bs own comments for the resource and parameters.
+&amp;lt%3b/p&amp;gt%3b
+&amp;lt%3bh2&amp;gt%3bGoal&amp;lt%3b/h2&amp;gt%3b
+&amp;lt%3bp&amp;gt%3b
+TweetNET was created to save .NET developers time and considerable effort when integrating Twitter into their websites. Using &amp;lt%3ba href=&amp;quot%3bhttps://dev.twitter.com/docs/api/1.1&amp;quot%3b&amp;gt%3bTwitter&amp;#39%3bs Rest API v1.1 documentation&amp;lt%3b/a&amp;gt%3b as specifications, the library was structured such that this and Twitter&amp;#39%3bs own API documentation are all but interchangeable. The library includes everything that is requried for integrating with Twitter, and enables developers to reasonably allows developers to integrate with Twitter within five minutes of starting to code.
+&amp;lt%3b/p&amp;gt%3b
+&amp;lt%3bbr/&amp;gt%3b
+&amp;lt%3bb&amp;gt%3b%2a Note:&amp;lt%3b/b&amp;gt%3b If you are using a branch of the project other than the Master, you will have to view the README for the branch that you have been using.</ProjectSummary>
+    <FeedbackEMailAddress>contact%40zacharykniebel.com</FeedbackEMailAddress>
+    <CopyrightText>Copyright %28c%29 2013 - ZacharyKniebel</CopyrightText>
+    <CopyrightHref>https://raw.github.com/zkniebel/TweetNet/v1.1_beta/LICENSE.txt</CopyrightHref>
   </PropertyGroup>
   <!-- There are no properties for these groups.  AnyCPU needs to appear in
        order for Visual Studio to perform the build.  The others are optional
