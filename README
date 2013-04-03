@@ -1,4 +1,4 @@
-# TweetNET v1.0
+# TweetNET v1.1
 by Zachary Kniebel
 
 ## Overview
@@ -55,10 +55,13 @@ by Zachary Kniebel
    
 ## Version and Release Notes
 
+-- Merged v1.1.0 into master --
+
 v1.1.0 (beta) April 2, 2013
    - Refactored and reorganized namespace to better match Twitter's API
    - Added statuses/filter and search/tweets
    - Added library documentation
+   - First four requests alpha test-complete
 
 -- Created Branch: v1.1 (beta) - April 2, 2013 --
 -- Created Branch (backup): v1.0 (alpha) - April 1st, 2013 -- 
