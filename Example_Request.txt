@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TweetNET.OAuth;
-using TweetNET.Requests.GET;
+using TweetNET.Requests.Timelines.Statuses;
 using System.Net;
 using System.IO;
 
@@ -20,7 +20,7 @@ public partial class _Default : System.Web.UI.Page {
 
         var tokens = new SecurityTokens(consumerKey, consumerSecret, oAuthToken, oAuthTokenSecret);
 
-        var utGETRequest = new UserTimelineGETRequest(tokens);
+        var utGETRequest = new UserTimelineRequest(tokens);
         utGETRequest.Screen_Name = twitterHandle;
 
         var request = utGETRequest.BuildRequest();
