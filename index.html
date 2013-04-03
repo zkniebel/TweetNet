@@ -31,7 +31,7 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h1>TweetNET v1.0</h1>
+        <h1>TweetNET v1.1</h1>
 
 <p>by Zachary Kniebel</p>
 
@@ -58,7 +58,11 @@
    will have to look up the request parameters that you need/want in the 
    request at <a href="http://dev.twitter.com/">http://dev.twitter.com/</a>. You may also inherit the Request
    class to build onto the library, using the inheriting classes for 
-   the implemented request types as a guide. </p>
+   the implemented request types as a guide. Please remember that v1.0 is
+   still in alpha testing. Namespace and class-name changes may occur 
+   between v1.0 and v1.1 (beta), which is targeted for Wednesday, April 
+   3rd, 2013. All namespace and class-name changes will be documented and
+   noted in the commit logs, for each class that they effect. </p>
 
 <h2>Making a request</h2>
 
@@ -67,6 +71,12 @@
    the Library matches up with Twitter's API, and request-specific classes
    include, as properties, all of the query parameters accepted by 
    Twitter.</p>
+
+<h2>Documentation</h2>
+
+<p>To view the documentation for this library (work in progress), go to 
+   TweetNET -&gt; docs -&gt; Help, and open the file "index.html" in either IE 
+   or FireFox.   </p>
 
 <h2>Rendering Tweets</h2>
 
@@ -77,7 +87,19 @@
    request that was used to retrieve them. For more information, view the
    repository at <a href="https://github.com/zkniebel/jquery-twitter-feed">https://github.com/zkniebel/jquery-twitter-feed</a>.</p>
 
-<h2>More documentation for this library will be added as soon as possible.</h2>
+<h2>Version and Release Notes</h2>
+
+<p>-- Merged v1.1.0 into master --</p>
+
+<p>v1.1.0 (beta) April 2, 2013</p>
+
+<ul>
+<li>Refactored and reorganized namespace to better match Twitter's API</li>
+<li>Added statuses/filter and search/tweets</li>
+<li>Added library documentation</li>
+<li>First four requests alpha test-complete</li>
+</ul><p>-- Created Branch: v1.1 (beta) - April 2, 2013 --
+-- Created Branch (backup): v1.0 (alpha) - April 1st, 2013 -- </p>
       </section>
     </div>
 
