@@ -1,0 +1,133 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Net;
+using TweetNET.OAuth;
+using TweetNET.Parameters;
+
+namespace TweetNET.Requests {
+    /// <summary>
+    /// Class to manage the building and sending of Twitter API requests
+    /// </summary>
+    public class RequestBuilder {
+        /// <summary>
+        /// List of request-specific parameters
+        /// </summary>
+        public RequestParameterCollection RequestParams { get; set; }
+        /// <summary>
+        /// URL to which the request should be sent
+        /// </summary>
+        public string ResourceURL { get; set; }
+        /// <summary>
+        /// The method of the request (GET or POST)
+        /// </summary>
+        public string RequestMethod { get; set; }
+        /// <summary>
+        /// OAuthInstance to generate all necessary oAuth headers, and signatures that are required for the request
+        /// </summary>
+        public OAuthInstance OAuth { get; set; }
+        /// <summary>
+        /// Determines whether or not the <see cref="ServicePointManager"/> should expect 100-Continue responses for POST requests (default: true)
+        /// </summary>
+        public bool Expect100Continue = true;
+        /// <summary>
+        /// Sets the content type of the request data to be sent (default: "application/x-www-form-urlencoded")
+        /// </summary>
+        public string ContentType = "application/x-www-form-urlencoded";
+
+        /// <summary>
+        /// Creates a new instance of the <see cref="RequestBuilder"/> class
+        /// </summary>
+        /// <param name="requestMethod">The method of the request (GET or POST)</param>
+        /// <param name="resourceURL">URL to which the request should be sent</param>
+        /// <param name="requestParams">List of request-specific parameters</param>
+        /// <param name="oAuthTokens">oAuth keys, tokens and secrets used to authorize the request</param>
+        public RequestBuilder(RequestMethods requestMethod, string resourceURL, RequestParameterCollection requestParams, SecurityTokens oAuthTokens) {
+            if (requestMethod == 0) {
+                RequestMethod = Globals.Common.REQUEST_METHOD_GET;
+                Expect100Continue = false;
+            } else {
+                RequestMethod = Globals.Common.REQUEST_METHOD_POST;
+            }
+            
+            ResourceURL = resourceURL;
+            RequestParams = requestParams;
+            OAuth = new OAuthInstance(oAuthTokens);
+        }
+
+        /// <summary>
+        /// Gets the base string of the request
+        /// </summary>
+        /// <returns>Base string of the request</returns>
+        public string GetBaseString() {
+            var baseString = OAuth.GetOAuthBaseString(RequestParams);
+            baseString = string.Concat(
+                RequestMethod,
+                TweetNET.Globals.Common.COMMON_STRING_AMPERSAND,
+                Uri.EscapeDataString(ResourceURL), 
+                TweetNET.Globals.Common.COMMON_STRING_AMPERSAND, 
+                Uri.EscapeDataString(baseString));
+            
+            return baseString;
+        }
+
+        /// <summary>
+        /// Builds an <see cref="HttpWebRequest"/> object for making a request to the Twitter API
+        /// </summary>
+        /// <returns>HttpWebRequest object</returns>
+        public virtual HttpWebRequest BuildRequest() {
+            return BuildRequest(OAuth.GetCompositeKey());
+        }
+
+        /// <summary>
+        /// Builds an <see cref="HttpWebRequest"/> object for making a request to the Twitter API, using the given composite key
+        /// </summary>
+        /// <param name="compositeKey">Composite key to be used for the request</param>
+        /// <returns><see cref="HttpWebRequest"/> object</returns>
+        public virtual HttpWebRequest BuildRequest(string compositeKey) {
+            var baseString = GetBaseString();
+            var signature = OAuth.GetOAuthSignature(baseString, compositeKey);
+            var header = OAuth.GetOAuthHeader(signature);
+
+            var parsedParams = string.Join(
+                TweetNET.Globals.Common.COMMON_STRING_AMPERSAND,
+                RequestParams);
+            var requestURL = string.Format(
+                TweetNET.Globals.Common.STRING_FORMAT_QUESTION_MARK_DELIM, 
+                ResourceURL, 
+                parsedParams);
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(requestURL);
+            request.Headers.Add("Authorization", header);
+            request.Method = RequestMethod;
+            request.ContentType = ContentType;
+
+            return request;
+        }
+
+        /// <summary>
+        /// Sends the given <see cref="HttpWebRequest"/> and returns the response
+        /// </summary>
+        /// <param name="request"><see cref="HttpWebRequest"/> to be sent</param>
+        /// <returns>Response from the sent request</returns>
+        public virtual WebResponse SendRequest(HttpWebRequest request) {
+            ServicePointManager.Expect100Continue = Expect100Continue;
+            return request.GetResponse();
+        }
+
+        /// <summary>
+        /// Enumeration of request methods
+        /// </summary>
+        public enum RequestMethods {
+            /// <summary>
+            /// Enumerated item representing the GET request method
+            /// </summary>
+            GET,
+            /// <summary>
+            /// Enumerated item representing the POST request method
+            /// </summary>
+            POST
+        }
+    }
+}
