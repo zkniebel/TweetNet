@@ -39,9 +39,12 @@ by Zachary Kniebel
    
 
 ## Documentation 
-   To view the documentation for this library (work in progress), go to 
-   TweetNET -> docs -> Help, and open the file "index.html" in either IE 
-   or FireFox.   
+   To view the documentation for the site online, visit:
+   https://rawgithub.com/zkniebel/TweetNet/master/TweetNET/docs/Help/Index.html
+
+   To view the documentation for this library after download (work in 
+   progress), go to TweetNET -> docs -> Help, and open the file 
+   "index.html" in either IE or FireFox.
 
  
 ## Rendering Tweets
